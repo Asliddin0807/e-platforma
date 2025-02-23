@@ -1,0 +1,42 @@
+.emblav {
+    max-width: 48rem;
+    margin: auto;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 50%;
+    margin-top: 10px;
+}
+
+.embla__viewportv {
+    overflow: hidden;
+}
+
+.embla__containerv {
+    display: flex;
+    touch-action: pan-x pinch-zoom;
+    margin-top: -14px;
+    margin-bottom: 13px;
+    height: 240px;
+    flex-direction: column;
+    width: 340px;
+}
+
+.embla__slidev {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-height: 0;
+    padding-top: var(--slide-spacing);
+}
+
+.embla__slide__numberv {
+    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+    border-radius: 1.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    height: 100%;
+    user-select: none;
+}
+
+.container__info:hover .icon {
+    margin-left: 10px;
+}
