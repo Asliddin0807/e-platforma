@@ -8,9 +8,11 @@ import { FC, useState } from "react";
 interface Props {
   product: IProducts;
   fill?: boolean;
+  width?: string;
+  height?: string;
 }
 
-const CustomImage: FC<Props> = ({ product, fill }) => {
+const CustomImage: FC<Props> = ({ product, fill, width, height }) => {
   const [isLoading, setIsloading] = useState(true);
   return (
     <>
@@ -23,7 +25,9 @@ const CustomImage: FC<Props> = ({ product, fill }) => {
           width={150}
           height={250}
           style={{
-            objectFit: "cover",
+            width: width,
+            height: height,
+            objectFit: "fill",
             borderRadius: "20px",
           }}
         />
@@ -35,7 +39,7 @@ const CustomImage: FC<Props> = ({ product, fill }) => {
           height={1000}
           onLoad={() => setIsloading(false)}
           style={{
-            width: "200px",
+            width: '100%',
             objectFit: "cover",
             height: "200px",
             borderTopLeftRadius: "6px",

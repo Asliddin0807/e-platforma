@@ -4,25 +4,27 @@ import Image from "next/image";
 import { useState } from "react";
 import VerticalCarousel from "../Carousel/Carousel";
 import { CodeBlocks } from "../Animations/Animation_Text";
+import Icons from "../Icons/Icons";
+import { iconData } from "../Local_data/datas";
+const dataCarousel = [
+  {
+    id: 1,
+    name: "Backend",
+    text: "Backend – bu dastur yoki veb-saytning ichki qismi, ya'ni server tomoni.",
+  },
+  {
+    id: 2,
+    name: "Frontend",
+    text: "Frontend – bu foydalanuvchi ko‘radigan va bevosita ishlaydigan veb-sayt yoki ilovaning tashqi qismi.",
+  },
+  {
+    id: 3,
+    name: "Mobile",
+    text: "Mobil dasturlash – bu smartfonlar, planshetlar va boshqa mobil qurilmalar uchun ilovalar yaratish jarayoni.",
+  },
+];
 
 export const HeroComponent = () => {
-  const dataCarousel = [
-    {
-      id: 1,
-      name: "Backend",
-      text: "Backend – bu dastur yoki veb-saytning ichki qismi, ya'ni server tomoni.",
-    },
-    {
-      id: 2,
-      name: "Frontend",
-      text: "Frontend – bu foydalanuvchi ko‘radigan va bevosita ishlaydigan veb-sayt yoki ilovaning tashqi qismi.",
-    },
-    {
-      id: 3,
-      name: "Mobile",
-      text: "Mobil dasturlash – bu smartfonlar, planshetlar va boshqa mobil qurilmalar uchun ilovalar yaratish jarayoni.",
-    },
-  ];
   return (
     <Box
       display={"flex"}
@@ -64,59 +66,39 @@ export const HeroComponent = () => {
 
         <VerticalCarousel dataCarousel={dataCarousel} />
       </Grid>
-      <Box w={"83%"}>
-        <Flex
-          mt={10}
-          border={"1px solid white"}
-          w={"100%"}
-          borderRadius={"md"}
+      <Flex
           justifyContent={"space-evenly"}
+          w={"84%"}
           alignItems={"center"}
-          flexDirection={{ base: "column", md: "column", xl: "row" }}
-          bgGradient="to-r"
-          gradientFrom="blue.600"
-          gradientTo="green.300"
-          p={4}
+          mt={10}
         >
-          <Box
-            textAlign={"center"}
-            borderBottom={{
-              base: "1px solid gray",
-              md: "1px solid gray",
-              xl: "none",
-            }}
-          >
-            <Text fontSize={"40px"}>+3</Text>
-            <Text fontSize={"30px"}>Yo'nalishlar</Text>
-          </Box>
-          <Box
-            textAlign={"center"}
-            borderBottom={{
-              base: "1px solid gray",
-              md: "1px solid gray",
-              xl: "none",
-            }}
-          >
-            <Text fontSize={"40px"}>+20</Text>
-            <Text fontSize={"30px"}>Loyhalar</Text>
-          </Box>
-          <Box
-            textAlign={"center"}
-            borderBottom={{
-              base: "1px solid gray",
-              md: "1px solid gray",
-              xl: "none",
-            }}
-          >
-            <Text fontSize={"40px"}>+20</Text>
-            <Text fontSize={"30px"}>Darsliklar</Text>
-          </Box>
+          {iconData.map((item, i) => (
+            <Icons
+              key={i}
+              iconName={item.icon}
+              prioritet={true}
+              color={item.color}
+              size={60}
+            />
+          ))}
         </Flex>
-      </Box>
       <Box mt={10}>
         <CodeBlocks
+          style="row"
+          text="IT Academy - bizning kurslarimiz kodlash bo'yicha ko'p yillik
+                  tajribaga ega va o'z bilimlarini siz bilan baham ko'rishni istaydigan
+                  soha mutaxassislari tomonidan ishlab chiqilgan va o'qitiladi."
           codeColor="yellow.500"
           codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
+        />
+
+        
+
+        <CodeBlocks
+          style="row-reverse"
+          text="O'zingiz uchun ma'qul kelgan yo'nalishni tanlang va bilim oling, undan tashqari biz sizga keng tanlovni taqdim etamiz."
+          codeColor="purple.500"
+          codeblock={`import React from 'react';\nimport { Box, Text } from '@chakra ui/react';\n\nexport default function App(){\t\nreturn (\n<Box>\n<Text>Hello World</Text>\n</Box>\n)};`}
         />
       </Box>
     </Box>

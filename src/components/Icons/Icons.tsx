@@ -4,7 +4,7 @@ import * as Iconses from "react-icons/bi"; // Импортируем все ик
 import { useColorMode } from "@/components/ui/color-mode";
 
 interface IconsProps extends React.SVGProps<SVGSVGElement> {
-  iconName?: keyof typeof Iconses; // Разрешаем только существующие иконки из Bi (BoxIcons)
+  iconName: keyof typeof Iconses | string; // Разрешаем только существующие иконки из Bi (BoxIcons)
   color?: string;
   prioritet?: boolean;
   size?: string | number;
@@ -21,7 +21,7 @@ const Icons: React.FC<IconsProps> = ({
   const IconComponent = Iconses[iconName as keyof typeof Iconses];
 
   if (!IconComponent) {
-    return null; 
+    return null;
   }
 
   return (

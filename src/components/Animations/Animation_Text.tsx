@@ -1,12 +1,14 @@
-import { Box, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
 
 interface Props {
   codeblock: string;
   codeColor: string;
+  text: string;
+  style?: "row" | "row-reverse";
 }
 
-export const CodeBlocks = ({ codeblock, codeColor }: Props) => {
+export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
   return (
     <Grid
       display={"flex"}
@@ -17,20 +19,21 @@ export const CodeBlocks = ({ codeblock, codeColor }: Props) => {
       flexDirection={{
         base: "column-reverse",
         md: "column-reverse",
-        xl: "row-reverse",
+        xl: style,
       }}
     >
-      <Box w={{ base: "100%", md: "100%", xl: "40%" }}>
+      <Box w={{ base: "100%", md: "100%", xl: "40%" }} p={4}>
         <Text
           fontSize={{ base: "15px", md: "20px", lg: "25px" }}
           style={{ fontFamily: "Space Grotesk, sans-serif" }}
           fontWeight={"400"}
           textAlign={{ base: "center", md: "start" }}
         >
-          IT Academy - bizning kurslarimiz kodlash bo'yicha ko'p yillik
-          tajribaga ega va o'z bilimlarini siz bilan baham ko'rishni istaydigan
-          soha mutaxassislari tomonidan ishlab chiqilgan va o'qitiladi.
+          {text}
         </Text>
+        <Button p={4} colorPalette={"cyan"} mt={4}>
+          Start
+        </Button>
       </Box>
       <Box
         h="fit-content"
