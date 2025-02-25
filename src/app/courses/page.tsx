@@ -8,10 +8,10 @@ import { CourseBread } from "@/components/Breadcrumb/C_Detail";
 export default function CoursesPage() {
   return (
     <Box p={14}>
-      <Text fontSize={"40px"} fontWeight={'bold'}>Video curslar</Text>
-      {/* Header buttons category */}
+      <Text fontSize={"40px"} fontWeight={"bold"}>
+        Video curslar
+      </Text>
       <CourseBread title_one={"Bosh sahifa"} title_two={"Kurslar"} link="/" />
-
       <ButtonsCategory />
     </Box>
   );

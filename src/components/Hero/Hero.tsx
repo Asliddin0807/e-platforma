@@ -67,21 +67,21 @@ export const HeroComponent = () => {
         <VerticalCarousel dataCarousel={dataCarousel} />
       </Grid>
       <Flex
-          justifyContent={"space-evenly"}
-          w={"84%"}
-          alignItems={"center"}
-          mt={10}
-        >
-          {iconData.map((item, i) => (
-            <Icons
-              key={i}
-              iconName={item.icon}
-              prioritet={true}
-              color={item.color}
-              size={60}
-            />
-          ))}
-        </Flex>
+        justifyContent={"space-evenly"}
+        w={"84%"}
+        alignItems={"center"}
+        mt={10}
+      >
+        {iconData.map((item, i) => (
+          <Icons
+            key={i}
+            iconName={item.icon}
+            prioritet={true}
+            color={item.color}
+            size={60}
+          />
+        ))}
+      </Flex>
       <Box mt={10}>
         <CodeBlocks
           style="row"
@@ -91,8 +91,6 @@ export const HeroComponent = () => {
           codeColor="yellow.500"
           codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
         />
-
-        
 
         <CodeBlocks
           style="row-reverse"

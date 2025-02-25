@@ -17,9 +17,51 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         text: "1 dars. Dasturlash",
-        video_source: "",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ JavaScript dasturlash tilini o'rganmoqchi bolgan. ✔ JavaScript Frameworklari bilan ishlashni xoxlovchilar uchun. ✔ Full-Stack loyha yaratuvchilar uchun. ✔ Yangi dasturlashga kirib kelyotgan dasturchilar uchun.",
+    project: [
+      "JavaScript",
+      "Server",
+      "JSON",
+      "Shartli operatorlar",
+      "Tsikllar",
+      "OOP",
+      "Array",
+      "Object",
+      "Function",
+    ],
+    comments: [],
   },
   {
     id: 1424111,
@@ -35,10 +77,52 @@ export const course_data: IProducts[] = [
       "React — bu Facebook (Meta) tomonidan ishlab chiqilgan ochiq kodli JavaScript kutubxonasi bo‘lib, foydalanuvchi interfeyslarini yaratish uchun ishlatiladi.\n🔹 Veb-saytlar va SPA (Single Page Applications)\n🔹 Admin panellar\n🔹 Mobil ilovalar (React Native)\n🔹 Ish stoli ilovalari (Electron.js bilan)",
     video_course: [
       {
-        text: "1 dars. Dasturlash",
-        video_source: "",
+        text: "1 dars. ReactJs ga kirish",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Components",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ Frontend Frameworkini o'rganishni xoxlovchilar. ✔ Full-Stack loyha yaratuvchilar uchun. ✔ Web-dasturlarni ishlab chqish. ✔ Loyha qurish va amaliyotlar.",
+    project: [
+      "ReactJs",
+      "Function Components",
+      "Class Components",
+      "API integration",
+      "State menangment",
+      "Hook",
+      "UI",
+      "Props",
+      "Amaliy loyhalar",
+    ],
+    comments: [],
   },
   {
     id: 211423232341,
@@ -51,13 +135,51 @@ export const course_data: IProducts[] = [
     },
     category: "Frontend",
     description:
-      "Next.js — bu React uchun ishlab chiqilgan framework bo‘lib, u server-side rendering (SSR) va static site generation (SSG) kabi xususiyatlarni qo‘llab-quvvatlaydi. Vercel tomonidan ishlab chiqilgan va React ilovalarini tezroq va SEO-ga mos ravishda yaratishga yordam beradi.\n🔹 SEO talab qilinadigan saytlar (bloglar, yangiliklar portallari)\n🔹 Katta hajmdagi SPA va e-commerce ilovalari\n🔹 Ishlab chiqish jarayoni tez va samarali bo‘lishi kerak bo‘lgan loyihalar",
+      "NextJs — bu React uchun ishlab chiqilgan framework bo‘lib, u server-side rendering (SSR) va static site generation (SSG) kabi xususiyatlarni qo‘llab-quvvatlaydi. Vercel tomonidan ishlab chiqilgan va React ilovalarini tezroq va SEO-ga mos ravishda yaratishga yordam beradi.\n🔹 SEO talab qilinadigan saytlar (bloglar, yangiliklar portallari)\n🔹 Katta hajmdagi SPA va e-commerce ilovalari\n🔹 Ishlab chiqish jarayoni tez va samarali bo‘lishi kerak bo‘lgan loyihalar",
     video_course: [
       {
         text: "1 dars. Dasturlash",
-        video_source: "",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ Frontend React Frameworkini o'rganishni xoxlovchilar. ✔ Full-Stack loyha yaratish. ✔ Web-dasturlarni ishlab chqish. ✔ Loyha qurish va amaliyotlar.",
+    project: [
+      "NextJS",
+      "SEO Optimization",
+      "Image Optimization",
+      "Server Side Rendering",
+      "Amaliy loyhalar",
+    ],
+    comments: [],
   },
   {
     id: 21233234241,
@@ -74,9 +196,41 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         text: "1 dars. Dasturlash",
-        video_source: "",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ Mobil ilovalarni ishlab chiqish. ✔ Mobil dasturlashni o'rganish. ✔ Mobil ilovalarni Server bilan integratsiya. ✔ React-native kutubxonasini chuqur o'rganish.",
+    project: [],
+    comments: [],
   },
   {
     id: 23323232142421,
@@ -93,9 +247,48 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         text: "1 dars. Dasturlash",
-        video_source: "",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ Mobil ilovalarni ishlab chiqish. ✔ Mukammal dasturlar yozish. ✔ Mobil dasturlarni server bilan integratsiya. ✔ Real loyhalar.",
+    project: [
+      "React-native",
+      "Integrtion Api",
+      "Expo",
+      "Running on Device",
+      "Debugging",
+      "Components",
+    ],
+    comments: [],
   },
   {
     id: 2323232142411,
@@ -112,9 +305,48 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         text: "1 dars. Dasturlash",
-        video_source: "",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "2 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "3 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "4 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "5 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "6 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "7 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
+      },
+      {
+        text: "8 dars. Dasturlash",
+        video_source: "asdasdasdasdasd",
       },
     ],
+    for_whom:
+      "✔ Backend yo'nalishini o'rganish. ✔ Web, mobil dasturlar uchun mukammal backend (server) qismini yozish. ✔ Bazalar bilan ishlash. ✔ MongoDB bazasini o'rganish, CRUD dasturlar.",
+    project: [
+      "Backend",
+      "NodeJs",
+      "Create API",
+      "ExpressJs",
+      "Authorization",
+      "MongoDB",
+    ],
+    comments: [],
   },
 ];
 

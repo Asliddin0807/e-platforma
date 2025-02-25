@@ -4,6 +4,13 @@ interface Video {
   video_source: string;
 }
 
+interface Comments {
+  author: string;
+  comment: string;
+  star: number;
+  date: string;
+}
+
 export interface IProducts {
   title: string;
   image: string;
@@ -15,4 +22,7 @@ export interface IProducts {
   category: string;
   description: string;
   video_course: Video[];
+  for_whom: string;
+  project: string[];
+  comments: Comments[];
 }
