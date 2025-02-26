@@ -2,6 +2,7 @@
 interface Video {
   text: string;
   video_source: string;
+  id: string
 }
 
 interface Comments {
@@ -25,4 +26,5 @@ export interface IProducts {
   for_whom: string;
   project: string[];
   comments: Comments[];
+  slug: string
 }

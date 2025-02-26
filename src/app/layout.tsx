@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Provider } from "@/components/ui/provider";
 import Navbar from "@/components/Navbar/Navbar";
 import NextTopLoader from "nextjs-toploader";
+import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "IT Academy",
@@ -29,6 +30,7 @@ export default function RootLayout({
             speed={200}
           />
           <Navbar />
+
           {children}
         </Provider>
       </body>

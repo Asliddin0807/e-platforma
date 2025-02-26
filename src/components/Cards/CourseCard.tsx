@@ -18,7 +18,7 @@ export default function CourseCard({ item }: Props) {
       border={"1px solid grey"}
       p={2}
       borderRadius={"md"}
-      onClick={() => router.push(`/course/${item.id}`)}
+      onClick={() => router.push(`/course/${item.slug}`)}
       cursor={"pointer"}
     >
       <CustomImage product={item} />

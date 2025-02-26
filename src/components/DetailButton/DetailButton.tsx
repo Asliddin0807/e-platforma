@@ -4,6 +4,7 @@ import { Box, Button, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { FiEye } from "react-icons/fi";
 import StarRating from "../Icons/Stars";
 import { IProducts } from "@/Interfaces/Product";
+import { useRouter } from "nextjs-toploader/app";
 
 interface Props {
   course: IProducts;
@@ -11,26 +12,27 @@ interface Props {
 
 export default function DetailButton({ course }: Props) {
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const router = useRouter();
 
   return (
     <Box
       w={"full"}
-      bgGradient="to-r"
-      gradientFrom="yellow.400"
-      gradientTo="green.400"
+      bg={"blue.700"}
+      _light={{ bg: "gray.300" }}
       borderRadius={"md"}
       boxShadow={"md"}
       p={2}
-      position={isMobile ? "fixed" : "sticky"}
-      bottom={isMobile ? 0 : ""}
-      left={isMobile ? 0 : ""}
-      right={isMobile ? 0 : ""}
+      position={{ base: "fixed", md: "fixed", xl: "sticky" }}
+      top={{ base: "", md: "", xl: 10 }}
+      bottom={{ base: 0, md: 0, xl: "" }}
+      left={{ base: 0, md: 0, xl: "" }}
+      right={{ base: 0, md: 0, xl: "" }}
       zIndex={1}
       display={"flex"}
       flexDirection={{ base: "row", md: "row", xl: "column" }}
       justifyContent={"space-between"}
     >
-      <Box display={"flex"} flexDirection={"column"} alignItems={'start'}>
+      <Box display={"flex"} flexDirection={"column"} alignItems={"start"}>
         <Flex
           alignItems={isMobile ? "center" : "start"}
           justifyContent={"space-between"}
@@ -50,7 +52,15 @@ export default function DetailButton({ course }: Props) {
           <Text fontSize={"18px"}>{course.rate.viewers} ko'rilgan</Text>
         </Flex>
       </Box>
-      <Button w={{ base: "", md: "", xl: "" }} mt={2}>
+      <Button
+        w={{ base: "", md: "", xl: "" }}
+        mt={2}
+        onClick={() =>
+          router.push(
+            `/dashboard/course/${course.slug}/${course.video_course[0].id}`
+          )
+        }
+      >
         Kursga kirish
       </Button>
     </Box>

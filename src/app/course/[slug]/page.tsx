@@ -21,7 +21,7 @@ import { FiEye } from "react-icons/fi";
 export default async function Course({
   params,
 }: {
-  params: Promise<{ id: number }>;
+  params: Promise<{ slug: string }>;
 }) {
   const defaultCourse: IProducts = {
     id: 0,
@@ -34,12 +34,13 @@ export default async function Course({
     for_whom: "",
     project: [],
     comments: [],
+    slug: "",
   };
 
-  const ids = (await params).id;
-  const course: IProducts =
-    course_data.find((c) => c.id === Number(ids)) ?? defaultCourse;
+  const ids = (await params).slug;
 
+  const course: IProducts =
+    course_data.find((c) => c.slug === ids) ?? defaultCourse;
   const parts: string[] = course.description.split("🔹");
   const list: string[] = course.for_whom.split("✔");
 
@@ -104,7 +105,12 @@ export default async function Course({
           </Center>
         </Box>
       </Box>
-      <HStack w={"84%"} alignItems={"start"} mb={20}>
+      <HStack
+        alignItems={"start"}
+        flexDirection={{ base: "column", md: "column", xl: "row" }}
+        mb={20}
+        w={"84%"}
+      >
         <Box w={{ base: "100%", md: "100%", xl: "65%" }} mt={5}>
           <Grid
             templateColumns={{
@@ -130,13 +136,19 @@ export default async function Course({
               </GridItem>
             ))}
           </Grid>
-          <Box mt={2} p={4} bg={"gray.800"} borderRadius={"md"}>
+          <Box
+            mt={2}
+            p={4}
+            bg={"gray.800"}
+            borderRadius={"md"}
+            _light={{ bg: "gray.300" }}
+          >
             <Text fontSize={"20px"} fontWeight={"bold"}>
               Kurs rejasi
             </Text>
             {course.video_course.map((item, idx) => (
-              <Flex key={idx} alignItems={'center'} mt={2} gap={4}>
-                <Icons iconName={'BiVideo'}/>
+              <Flex key={idx} alignItems={"center"} mt={2} gap={4}>
+                <Icons iconName={"BiVideo"} />
                 <Text># {item.text}</Text>
               </Flex>
             ))}
@@ -144,10 +156,13 @@ export default async function Course({
           <Box
             mt={2}
             bg={"gray.800"}
-            p={2}
+            p={4}
             borderRadius={"md"}
             _light={{ bg: "gray.300" }}
           >
+            <Text fontSize={"20px"} fontWeight={"bold"}>
+              Kim uchun?
+            </Text>
             {list.map((item, index) => (
               <Text key={index}>
                 {index === 0 ? item.trim() : `• ${item.trim()}`}
@@ -155,7 +170,7 @@ export default async function Course({
             ))}
           </Box>
         </Box>
-        <Box w={{ base: 0, md: 0, xl: "35%" }} mt={5}>
+        <Box w={{ base: 0, md: 0, xl: "35%" }} position={"relative"} mt={5}>
           <DetailButton course={course} />
         </Box>
       </HStack>

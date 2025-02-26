@@ -1,12 +1,11 @@
 import { HeroComponent } from "@/components/Hero/Hero";
 import CourseCard from "@/components/Cards/CourseCard";
 import { course_data } from "@/components/Local_data/datas";
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text, Container } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Box
-      w={"full"}
+    <Container
       display={"flex"}
       flexDirection={"column"}
       alignItems={"center"}
@@ -21,13 +20,13 @@ export default function Home() {
         justifyContent={"space-evenly"}
         flexWrap={"wrap"}
         flexShrink={1}
-        w={"85%"}
+        w={"84%"}
         flexDirection={{ base: "column", md: "row", xl: "row" }}
       >
         {course_data.slice(0, 3).map((item, idx) => (
           <CourseCard key={idx} item={item} />
         ))}
       </Flex>
-    </Box>
+    </Container>
   );
 }

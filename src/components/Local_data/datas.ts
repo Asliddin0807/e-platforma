@@ -16,34 +16,42 @@ export const course_data: IProducts[] = [
       "JavaScript — bu dinamik, yuqori darajali dasturlash tili bo‘lib, veb-sahifalarni interaktiv qilish uchun ishlatiladi. U brauzer ichida ishlaydi, ammo Node.js orqali serverda ham bajarilishi mumkin.\n JavaScriptni o‘rganish brauzer konsolidan yoki onlayn sandboxlar (CodePen, JSFiddle) yordamida boshlash mumkin.\n🔹 Veb-saytlarga dinamika qo‘shish (animatsiyalar, formalar, tugmalar)\n🔹 Backend dasturlar (Node.js)\n🔹 Mobil ilovalar (React Native, Ionic)\n🔹 Desktop ilovalar (Electron.js)\n🔹 O‘yinlar (Phaser.js, Three.js)",
     video_course: [
       {
+        id: "123123sadasd",
         text: "1 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "1111111111sasdadasd",
         text: "2 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "53434324sddsdasdas",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "12312adasdad",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "1212sadasdasdassdsadasd",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "23asd2132ad32",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asasd2q2wd2r5aasaadt",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "1123123sadasdadasqw2",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -62,6 +70,7 @@ export const course_data: IProducts[] = [
       "Function",
     ],
     comments: [],
+    slug: "JavaScript",
   },
   {
     id: 1424111,
@@ -77,34 +86,42 @@ export const course_data: IProducts[] = [
       "React — bu Facebook (Meta) tomonidan ishlab chiqilgan ochiq kodli JavaScript kutubxonasi bo‘lib, foydalanuvchi interfeyslarini yaratish uchun ishlatiladi.\n🔹 Veb-saytlar va SPA (Single Page Applications)\n🔹 Admin panellar\n🔹 Mobil ilovalar (React Native)\n🔹 Ish stoli ilovalari (Electron.js bilan)",
     video_course: [
       {
+        id: "122321321asdasdsdasd",
         text: "1 dars. ReactJs ga kirish",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asdasdq2312312as",
         text: "2 dars. Components",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "12312adadasd2112",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asdasdq2121312asdasdasdas",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "hfgfjghjghj76i67",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "uy6776jtyjtytj",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "76786867ghfghffg",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "122131231ssdsdadasdasdasd",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -123,6 +140,7 @@ export const course_data: IProducts[] = [
       "Amaliy loyhalar",
     ],
     comments: [],
+    slug: "ReactJS",
   },
   {
     id: 211423232341,
@@ -138,34 +156,42 @@ export const course_data: IProducts[] = [
       "NextJs — bu React uchun ishlab chiqilgan framework bo‘lib, u server-side rendering (SSR) va static site generation (SSG) kabi xususiyatlarni qo‘llab-quvvatlaydi. Vercel tomonidan ishlab chiqilgan va React ilovalarini tezroq va SEO-ga mos ravishda yaratishga yordam beradi.\n🔹 SEO talab qilinadigan saytlar (bloglar, yangiliklar portallari)\n🔹 Katta hajmdagi SPA va e-commerce ilovalari\n🔹 Ishlab chiqish jarayoni tez va samarali bo‘lishi kerak bo‘lgan loyihalar",
     video_course: [
       {
+        id: "12312sdassssssssssssss",
         text: "1 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asdjhhjkhkho8o8o8o8",
         text: "2 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "8o8oo8o8ghjhgjghjghj",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "bvbvnvbnvbnv434343",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "zxzxzxzxzxxz3223124",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "xzczxczssaaaaa",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "23kjljklkjfghfg",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "12sfkkololololofppp",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -180,6 +206,7 @@ export const course_data: IProducts[] = [
       "Amaliy loyhalar",
     ],
     comments: [],
+    slug: "NextJS",
   },
   {
     id: 21233234241,
@@ -195,34 +222,42 @@ export const course_data: IProducts[] = [
       "React Native — bu Facebook (Meta) tomonidan ishlab chiqilgan ochiq kodli framework bo‘lib, u JavaScript va React yordamida Android va iOS uchun mobil ilovalar yaratish imkonini beradi.\n🔹 Mobil ilovalar (Android va iOS)\n🔹 Kross-platforma dasturlar\n🔹 E-commerce, ijtimoiy tarmoqlar va biznes ilovalari",
     video_course: [
       {
+        id: "9999999dddd",
         text: "1 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "aaaaaaaassssssf",
         text: "2 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "76779987978789",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "saasasfccccc",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "aaaaaaaaaaaaaaaaaaabbbb",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asssssssssssssssssssffffffffffffffff",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "21212cddddd",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asdxzcxcbnnn",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -231,6 +266,7 @@ export const course_data: IProducts[] = [
       "✔ Mobil ilovalarni ishlab chiqish. ✔ Mobil dasturlashni o'rganish. ✔ Mobil ilovalarni Server bilan integratsiya. ✔ React-native kutubxonasini chuqur o'rganish.",
     project: [],
     comments: [],
+    slug: "ReactNative",
   },
   {
     id: 23323232142421,
@@ -246,34 +282,42 @@ export const course_data: IProducts[] = [
       "Dart — bu Google tomonidan ishlab chiqilgan obyektga yo‘naltirilgan dasturlash tili bo‘lib, u Flutter orqali mobil, veb va ish stoli ilovalar yaratish uchun ishlatiladi.\n🔹 Flutter bilan mobil va veb ilovalar yaratishda\n🔹 Server ilovalari (dart:io)\n🔹 Ish stoli ilovalari (Windows, macOS, Linux)",
     video_course: [
       {
+        id: "32vcbcvbcvb443",
         text: "1 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "sfdsfddhnhnhnh",
         text: "2 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "3543dfdsffsdfdf",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "sdfj567667",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "asaasxxxvc5553",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "dgjvbgbgbgbgr",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "3223frrfrrfrfrfrf",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "sdfsdfscscscsq111",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -289,6 +333,7 @@ export const course_data: IProducts[] = [
       "Components",
     ],
     comments: [],
+    slug: "Dart",
   },
   {
     id: 2323232142411,
@@ -304,34 +349,42 @@ export const course_data: IProducts[] = [
       "Node.js — bu JavaScript runtime muhiti bo‘lib, server tomonida ham JavaScript kodini bajarish imkonini beradi. U Google V8 dvigateliga asoslangan va asinxron, event-driven (hodisalarga asoslangan) arxitektura bilan ishlaydi.🔹 Web-serverlar va backend ilovalar\n🔹 RESTful API va GraphQL xizmatlari\n🔹 Chat va real-time ilovalar (WebSocket, Socket.io)\n🔹 Mikroxizmatlar va serverless arxitektura\n🔹 CLI (command-line interface) dasturlar",
     video_course: [
       {
+        id: "dddddd",
         text: "1 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "ffffffff",
         text: "2 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "gggggggg",
         text: "3 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "hhhhhhhhhhhhhhhh",
         text: "4 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "sfscxxzccew",
         text: "5 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "essdffsfsf",
         text: "6 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "",
         text: "7 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
       {
+        id: "dggddfgdfg",
         text: "8 dars. Dasturlash",
         video_source: "asdasdasdasdasd",
       },
@@ -347,6 +400,7 @@ export const course_data: IProducts[] = [
       "MongoDB",
     ],
     comments: [],
+    slug: "NodeJS",
   },
 ];
 
