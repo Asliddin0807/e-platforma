@@ -8,6 +8,7 @@ import Video from "@/components/VideoPlyaer/Video";
 import { IProducts } from "@/Interfaces/Product";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useParams } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 const Editors = dynamic(() => import("@/components/Editor/Editor"), {
   ssr: false,
@@ -23,7 +24,7 @@ const Page = () => {
   if (!course) return <div>Курс не найден</div>;
 
   const id_video = course.video_course.find((c) => c.id === id) || null;
-
+  const router = useRouter()
   return (
     <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
       <CourseBread
@@ -41,15 +42,16 @@ const Page = () => {
         <Box w={{ base: "100%", xl: "70%" }}>
           <Video />
           <Text fontSize="22px" mt={2}>
-            {id_video?.text}
+            #{id_video?.text}
           </Text>
         </Box>
 
         <Box
           w={{ base: "100%", xl: "30%" }}
-          h="450px"
+          h="444px"
           overflowY="scroll"
           bg="gray.900"
+          _light={{ bg: 'gray.300' }}
           mb={2}
         >
           {course.video_course.map((item, idx) => (
@@ -63,7 +65,7 @@ const Page = () => {
               mx={4}
             >
               <Icons iconName="BiVideo" />
-              <Button variant="plain" fontSize="17px">
+              <Button variant="plain" fontSize="17px" onClick={() => router.push(`/dashboard/course/${slug}/${item.id}`)}>
                 #{item.text}
               </Button>
             </Flex>
@@ -71,7 +73,7 @@ const Page = () => {
         </Box>
       </Box>
       <Box w="84%" mt={20} mb={20}>
-        <Text fontSize={'22px'}>Amaliyotda o'zingizni sinab ko'ring!</Text>
+        <Text fontSize={"22px"}>Amaliyotda o'zingizni sinab ko'ring!</Text>
         <Editors />
       </Box>
     </Box>

@@ -14,15 +14,16 @@ export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
       display={"flex"}
       gap={10}
       p={4}
-      justifyContent={"center"}
+      justifyContent={"space-between"}
       alignItems={"center"}
       flexDirection={{
         base: "column-reverse",
         md: "column-reverse",
         xl: style,
       }}
+      mt={5}
     >
-      <Box w={{ base: "100%", md: "100%", xl: "40%" }} p={4}>
+      <Box w={{ base: "100%", md: "100%", xl: "50%" }} p={4}>
         <Text
           fontSize={{ base: "15px", md: "20px", lg: "25px" }}
           style={{ fontFamily: "Space Grotesk, sans-serif" }}
@@ -74,7 +75,7 @@ export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
           fontFamily="mono"
           fontWeight="bold"
           pr={1}
-          w="90%"
+          w="100%"
           textAlign={"start"}
           color={codeColor}
         >

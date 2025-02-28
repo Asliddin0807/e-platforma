@@ -17,23 +17,23 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "123123sadasd",
-        text: "1 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        text: "1 dars. JavaScript dasturlash tili",
+        video_source: "https://vimeo.com/936699802",
       },
       {
         id: "1111111111sasdadasd",
-        text: "2 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        text: "2 dars. const, var, let",
+        video_source: "https://vimeo.com/936699802",
       },
       {
         id: "53434324sddsdasdas",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        text: "3 dars. Tiplar",
+        video_source: "https://vimeo.com/936699802",
       },
       {
         id: "12312adasdad",
         text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        video_source: "https://vimeo.com/936699802",
       },
       {
         id: "1212sadasdasdassdsadasd",
@@ -436,5 +436,13 @@ export const iconData: IData[] = [
   {
     icon: "BiLogoGithub",
     color: "black",
+  },
+  {
+    icon: "BiLogoLess",
+    color: "purple",
+  },
+  {
+    icon: "BiLogoJava",
+    color: "gray",
   },
 ];

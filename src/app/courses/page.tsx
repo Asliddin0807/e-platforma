@@ -9,7 +9,7 @@ export default function CoursesPage() {
   return (
     <Box p={14}>
       <Text fontSize={"40px"} fontWeight={"bold"}>
-        Video curslar
+        Video kurslar
       </Text>
       <CourseBread title_one={"Bosh sahifa"} title_two={"Kurslar"} link="/" />
       <ButtonsCategory />

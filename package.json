@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^3.8.1",
+    "@clerk/nextjs": "^6.12.1",
     "@emotion/react": "^11.14.0",
     "@monaco-editor/react": "^4.7.0",
+    "@u-wave/react-vimeo": "^0.9.12",
     "axios": "^1.8.1",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
@@ -21,6 +23,7 @@
     "nextjs-toploader": "^3.7.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.5.0",
     "react-player": "^2.16.0",
     "react-type-animation": "^3.2.0"

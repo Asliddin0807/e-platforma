@@ -80,7 +80,7 @@ export default function ButtonsCategory() {
         )}
       </Flex>
       <Flex
-        gap={2}
+        gap={3}
         mt={4}
         flexWrap={"wrap"}
         flexShrink={1}
