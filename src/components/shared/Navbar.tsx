@@ -37,7 +37,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <Box w={"full"} p={5} h={"90px"} mb={10}>
+    <Box w={"full"} p={1} h={"90px"} position={"sticky"} top={0} zIndex={10}>
       <Box
         position={"absolute"}
         top={0}
@@ -49,6 +49,9 @@ export default function Navbar() {
         style={{ backdropFilter: "blur(10px) brightness(100%)" }}
         fontSize={"22px"}
         fontWeight={"bold"}
+        bg={"gray.900"}
+        _light={{ bg: 'gray.300' }}
+        borderBottom={"1px solid gray"}
       >
         <HStack alignItems={"center"} justifyContent={"space-between"}>
           <Box display={"flex"} gap={2} alignItems={"center"}>
@@ -84,40 +87,6 @@ export default function Navbar() {
               </Button>
             )}
           </Box>
-        </HStack>
-      </Box>
-      <Box
-        w={"100%"}
-        h={"40px"}
-        position={isScrolled ? "fixed" : "absolute"} // Если прокручено больше 100px, делаем fixed
-        top={isScrolled ? "0" : "80px"} // если прокручено, фиксируем сверху
-        left={0}
-        right={0}
-        boxShadow={isScrolled ? "lg" : "none"} // Добавляем тень, когда фиксируется
-        zIndex={999}
-        bg={"blue.700"}
-        _light={{ bg: "gray.400" }}
-      >
-        <HStack
-          display={{ base: "none", md: "flex" }}
-          gap={2}
-          justifyContent={"space-evenly"}
-          alignItems={"center"}
-          mt={2}
-        >
-          {navButtons.map((item, idx) => (
-            <Link
-              key={idx}
-              onClick={() => router.push(item.pathname)}
-              fontSize={"15px"}
-              display={"flex"}
-              gap={2}
-              alignItems={"center"}
-            >
-              <Icons iconName={item.icon} />
-              {item.name}
-            </Link>
-          ))}
         </HStack>
       </Box>
     </Box>

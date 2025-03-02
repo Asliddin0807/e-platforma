@@ -17,7 +17,7 @@ export default function Home() {
       <CheckUser />
       <Flex
         gap={2}
-        mt={4}
+        mt={10}
         justifyContent={"space-evenly"}
         flexWrap={"wrap"}
         flexShrink={1}

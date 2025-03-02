@@ -7,7 +7,7 @@ import { CourseBread } from "@/components/shared/C_Detail";
 
 export default function CoursesPage() {
   return (
-    <Box p={14}>
+    <Box p={2} ml={4}>
       <Text fontSize={"40px"} fontWeight={"bold"}>
         Video kurslar
       </Text>

@@ -24,7 +24,6 @@ export default async function Course({
   params: Promise<{ slug: string }>;
 }) {
   const defaultCourse: IProducts = {
-    id: 0,
     title: "Курс не найден",
     image: "default.png",
     rate: { rates: 0, viewers: 0 },

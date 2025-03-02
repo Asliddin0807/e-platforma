@@ -1,8 +1,8 @@
 //vremmeniy interface
-interface Video {
-  text: string;
-  video_source: string;
-  id: string
+interface Video { 
+  text: string; // yes
+  video_source: string; // yes
+  id: string //auto
 }
 
 interface Comments {
@@ -13,18 +13,17 @@ interface Comments {
 }
 
 export interface IProducts {
-  title: string;
-  image: string;
-  id: number;
-  rate: {
+  title: string; //yes
+  image: string; //yes
+  rate: { //auto
     rates: number;
     viewers: number;
   };
-  category: string;
-  description: string;
-  video_course: Video[];
-  for_whom: string;
-  project: string[];
-  comments: Comments[];
-  slug: string
+  category: string; // yes
+  description: string; //yes
+  video_course: Video[]; // yes
+  for_whom: string; //yes
+  project: string[]; // never
+  comments: Comments[]; //auto
+  slug: string //yes
 }

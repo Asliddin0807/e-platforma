@@ -4,11 +4,11 @@ import { TypeAnimation } from "react-type-animation";
 interface Props {
   codeblock: string;
   codeColor: string;
-  text: string;
+
   style?: "row" | "row-reverse";
 }
 
-export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
+export const CodeBlocks = ({ codeblock, codeColor, style }: Props) => {
   return (
     <Grid
       display={"flex"}
@@ -23,22 +23,10 @@ export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
       }}
       mt={5}
     >
-      <Box w={{ base: "100%", md: "100%", xl: "50%" }} p={4}>
-        <Text
-          fontSize={{ base: "15px", md: "20px", lg: "25px" }}
-          style={{ fontFamily: "Space Grotesk, sans-serif" }}
-          fontWeight={"400"}
-          textAlign={{ base: "center", md: "start" }}
-        >
-          {text}
-        </Text>
-        <Button p={4} colorPalette={"cyan"} mt={4}>
-          Start
-        </Button>
-      </Box>
       <Box
         h="fit-content"
-        border="1px"
+        // border={''}
+        border="1px solid black"
         borderColor="richblack.700"
         rounded="xl"
         display="flex"
@@ -46,8 +34,8 @@ export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
         py={3}
         textStyle="sm"
         position="relative"
-        w={{ base: "100%", md: "100%", xl: "40%" }}
-        lg={{ w: "470px" }}
+        w={{ base: "350px", md: "400px", xl: "400px" }}
+        // lg={{ w: "470px" }}
         pr={10}
         pl={10}
         bg={"gray.900"}
@@ -56,7 +44,7 @@ export const CodeBlocks = ({ codeblock, codeColor, text, style }: Props) => {
         <Flex
           direction="column"
           align="center"
-          w="10%"
+          w={"10%"}
           color="yellow.400"
           fontFamily="Inter"
           fontWeight="bold"

@@ -33,6 +33,7 @@ export default function ButtonsCategory() {
         gap={2}
         mt={4}
         flexDirection={{ base: "column", md: "row", xl: "row" }}
+
       >
         {isMobile ? (
           <Box>
@@ -80,10 +81,11 @@ export default function ButtonsCategory() {
         )}
       </Flex>
       <Flex
-        gap={3}
+        gap={5}
         mt={4}
         flexWrap={"wrap"}
         flexShrink={1}
+
         flexDirection={{ base: "column", md: "row", xl: "row" }}
       >
         {data.map((item, idx) => (

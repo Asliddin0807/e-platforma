@@ -11,7 +11,7 @@ import { dataCarousel } from "@/constants/carousel_data";
 
 export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
-  const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1200px" });
+  const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1000px" });
   return (
     <Box
       display={"flex"}
@@ -19,7 +19,7 @@ export const HeroComponent = () => {
       alignItems={"center"}
       justifyContent={"center"}
       mt={4}
-      mx={'100px'}
+      mx={"100px"}
     >
       <Grid
         p={2}
@@ -54,14 +54,18 @@ export const HeroComponent = () => {
 
         <VerticalCarousel dataCarousel={dataCarousel} />
       </Grid>
-      <CodeBlocks
-        style="row"
-        text="IT Code - bizning kurslarimiz kodlash bo'yicha ko'p yillik
-                  tajribaga ega va o'z bilimlarini siz bilan baham ko'rishni istaydigan
-                  soha mutaxassislari tomonidan ishlab chiqilgan va o'qitiladi."
-        codeColor="yellow.500"
-        codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
-      />
+      <Flex alignItems={"start"}  justifyContent={'start'} flexDirection={{ base: "column", md: 'column', xl: "row" }}>
+        <CodeBlocks
+          style="row"
+          codeColor="yellow.500"
+          codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
+        />
+        <CodeBlocks
+          style="row-reverse"
+          codeColor="purple.500"
+          codeblock={`import React from 'react';\nimport { Box, Text } from '@chakra ui/react';\n\nexport default function App(){\t\nreturn (\n<Box>\n<Text>Hello World</Text>\n</Box>\n)};`}
+        />
+      </Flex>
 
       <Box w={{ base: "400px", md: "full" }} mt={10}>
         <Marquee
@@ -73,9 +77,8 @@ export const HeroComponent = () => {
             maxWidth: width, // Занимает всю ширину
             display: "flex",
             alignItems: "center",
-            justifyContent: 'center',
+            justifyContent: "center",
             gap: "11px",
-   
           }}
         >
           <Flex gap={gapSize}>
@@ -91,13 +94,6 @@ export const HeroComponent = () => {
           </Flex>
         </Marquee>
       </Box>
-
-      <CodeBlocks
-        style="row-reverse"
-        text="O'zingiz uchun ma'qul kelgan yo'nalishni tanlang va bilim oling, undan tashqari biz sizga keng tanlovni taqdim etamiz."
-        codeColor="purple.500"
-        codeblock={`import React from 'react';\nimport { Box, Text } from '@chakra ui/react';\n\nexport default function App(){\t\nreturn (\n<Box>\n<Text>Hello World</Text>\n</Box>\n)};`}
-      />
     </Box>
     // </Box>
   );

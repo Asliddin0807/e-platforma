@@ -49,6 +49,7 @@ export default function RootLayout({
               showSpinner={false}
               easing="ease"
               speed={200}
+              zIndex={9999}
             />
             {children}
           </Provider>

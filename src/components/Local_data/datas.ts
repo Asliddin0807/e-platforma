@@ -3,7 +3,6 @@ import { IData } from "@/Interfaces/Icons";
 
 export const course_data: IProducts[] = [
   {
-    id: 1224132,
     title: "JavaScript asoslar",
     image:
       "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
@@ -73,7 +72,7 @@ export const course_data: IProducts[] = [
     slug: "JavaScript",
   },
   {
-    id: 1424111,
+
     title: "ReactJs asoslari",
     image:
       "https://cdn.hashnode.com/res/hashnode/image/upload/v1603797780927/S6loCK6fY.png",
@@ -143,7 +142,7 @@ export const course_data: IProducts[] = [
     slug: "ReactJS",
   },
   {
-    id: 211423232341,
+
     title: "NextJs asoslari",
     image:
       "https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg",
@@ -209,7 +208,7 @@ export const course_data: IProducts[] = [
     slug: "NextJS",
   },
   {
-    id: 21233234241,
+
     title: "React-native asoslari",
     image:
       "https://lh5.googleusercontent.com/4kVmNO5044d95NhwlOVXVlpMisEnEewyFcdVpLcglf92geyjbr5TwZKdLHPsQJfa6jPk4JVFB-7CBbBKlqMHq398nuHbkhVgG6DS9GXVP6cbMGnwuptX26Jtflw_C1_D_neEh1lO",
@@ -269,7 +268,7 @@ export const course_data: IProducts[] = [
     slug: "ReactNative",
   },
   {
-    id: 23323232142421,
+
     title: "Dart asoslari",
     image:
       "https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg",
@@ -336,7 +335,7 @@ export const course_data: IProducts[] = [
     slug: "Dart",
   },
   {
-    id: 2323232142411,
+
     title: "NodeJS asoslari",
     image:
       "https://www.webpunks.at/wp-content/uploads/2016/08/nodejs-modules-webentwicklung-webdevelopment-webpunks.jpg",

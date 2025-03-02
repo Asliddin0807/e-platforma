@@ -15,12 +15,12 @@ export const navButtons = [
     id: 3,
     name: "Loyhalar",
     pathname: "/projects",
-    icon: "BiCode",
+    icon: "BiCodeAlt",
   },
   {
     id: 4,
-    name: 'Admin dashboard',
+    name: 'Dashboard',
     pathname: '/dashboard',
-    icon: 'BiUser'
+    icon: 'BiBracket'
   }
 ];
