@@ -2,6 +2,7 @@ import { IAuth } from "@/Interfaces/auth";
 import { db } from "@/lib/firebase/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { UserResource } from "@clerk/types";
+
 const CheckUser = {
   async user(user: UserResource | null): Promise<IAuth | null> {
     if (!user) return null;

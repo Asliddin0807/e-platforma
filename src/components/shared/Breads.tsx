@@ -12,7 +12,7 @@ interface Props {
 export const CourseBread = ({ title_one, title_two, link }: Props) => {
   const router = useRouter();
   return (
-    <HStack w={"84%"} fontSize={"22px"} justifyContent={"start"} mb={2}>
+    <HStack w={"full"} fontSize={"22px"} justifyContent={"start"} mb={2}>
       <Breadcrumb.Root size={"md"}>
         <Breadcrumb.List>
           <Breadcrumb.Item>

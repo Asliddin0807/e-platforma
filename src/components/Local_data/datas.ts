@@ -16,43 +16,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "123123sadasd",
-        text: "1 dars. JavaScript dasturlash tili",
-        video_source: "https://vimeo.com/936699802",
+        title: "1 dars. JavaScript dasturlash tili",
+        link: "https://vimeo.com/936699802",
       },
       {
         id: "1111111111sasdadasd",
-        text: "2 dars. const, var, let",
-        video_source: "https://vimeo.com/936699802",
+        title: "2 dars. const, var, let",
+        link: "https://vimeo.com/936699802",
       },
       {
         id: "53434324sddsdasdas",
-        text: "3 dars. Tiplar",
-        video_source: "https://vimeo.com/936699802",
+        title: "3 dars. Tiplar",
+        link: "https://vimeo.com/936699802",
       },
       {
         id: "12312adasdad",
-        text: "4 dars. Dasturlash",
-        video_source: "https://vimeo.com/936699802",
+        title: "4 dars. Dasturlash",
+        link: "https://vimeo.com/936699802",
       },
       {
         id: "1212sadasdasdassdsadasd",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "23asd2132ad32",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asasd2q2wd2r5aasaadt",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "1123123sadasdadasqw2",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:
@@ -72,7 +72,6 @@ export const course_data: IProducts[] = [
     slug: "JavaScript",
   },
   {
-
     title: "ReactJs asoslari",
     image:
       "https://cdn.hashnode.com/res/hashnode/image/upload/v1603797780927/S6loCK6fY.png",
@@ -86,43 +85,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "122321321asdasdsdasd",
-        text: "1 dars. ReactJs ga kirish",
-        video_source: "asdasdasdasdasd",
+        title: "1 dars. ReactJs ga kirish",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asdasdq2312312as",
-        text: "2 dars. Components",
-        video_source: "asdasdasdasdasd",
+        title: "2 dars. Components",
+        link: "asdasdasdasdasd",
       },
       {
         id: "12312adadasd2112",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "3 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asdasdq2121312asdasdasdas",
-        text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "4 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "hfgfjghjghj76i67",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "uy6776jtyjtytj",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "76786867ghfghffg",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "122131231ssdsdadasdasdasd",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:
@@ -142,7 +141,6 @@ export const course_data: IProducts[] = [
     slug: "ReactJS",
   },
   {
-
     title: "NextJs asoslari",
     image:
       "https://images.ctfassets.net/23aumh6u8s0i/6pjUKboBuFLvCKkE3esaFA/5f2101d6d2add5c615db5e98a553fc44/nextjs.jpeg",
@@ -156,43 +154,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "12312sdassssssssssssss",
-        text: "1 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "1 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asdjhhjkhkho8o8o8o8",
-        text: "2 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "2 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "8o8oo8o8ghjhgjghjghj",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "3 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "bvbvnvbnvbnv434343",
-        text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "4 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "zxzxzxzxzxxz3223124",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "xzczxczssaaaaa",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "23kjljklkjfghfg",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "12sfkkololololofppp",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:
@@ -208,7 +206,6 @@ export const course_data: IProducts[] = [
     slug: "NextJS",
   },
   {
-
     title: "React-native asoslari",
     image:
       "https://lh5.googleusercontent.com/4kVmNO5044d95NhwlOVXVlpMisEnEewyFcdVpLcglf92geyjbr5TwZKdLHPsQJfa6jPk4JVFB-7CBbBKlqMHq398nuHbkhVgG6DS9GXVP6cbMGnwuptX26Jtflw_C1_D_neEh1lO",
@@ -222,43 +219,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "9999999dddd",
-        text: "1 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "1 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "aaaaaaaassssssf",
-        text: "2 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "2 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "76779987978789",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "3 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "saasasfccccc",
-        text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "4 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "aaaaaaaaaaaaaaaaaaabbbb",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asssssssssssssssssssffffffffffffffff",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "21212cddddd",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asdxzcxcbnnn",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:
@@ -268,7 +265,6 @@ export const course_data: IProducts[] = [
     slug: "ReactNative",
   },
   {
-
     title: "Dart asoslari",
     image:
       "https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg",
@@ -282,43 +278,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "32vcbcvbcvb443",
-        text: "1 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "1 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "sfdsfddhnhnhnh",
-        text: "2 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "2 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "3543dfdsffsdfdf",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "3 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "sdfj567667",
-        text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "4 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "asaasxxxvc5553",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "dgjvbgbgbgbgr",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "3223frrfrrfrfrfrf",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "sdfsdfscscscsq111",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:
@@ -335,7 +331,6 @@ export const course_data: IProducts[] = [
     slug: "Dart",
   },
   {
-
     title: "NodeJS asoslari",
     image:
       "https://www.webpunks.at/wp-content/uploads/2016/08/nodejs-modules-webentwicklung-webdevelopment-webpunks.jpg",
@@ -349,43 +344,43 @@ export const course_data: IProducts[] = [
     video_course: [
       {
         id: "dddddd",
-        text: "1 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "1 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "ffffffff",
-        text: "2 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "2 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "gggggggg",
-        text: "3 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "3 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "hhhhhhhhhhhhhhhh",
-        text: "4 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "4 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "sfscxxzccew",
-        text: "5 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "5 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "essdffsfsf",
-        text: "6 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "6 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "",
-        text: "7 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "7 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
       {
         id: "dggddfgdfg",
-        text: "8 dars. Dasturlash",
-        video_source: "asdasdasdasdasd",
+        title: "8 dars. Dasturlash",
+        link: "asdasdasdasdasd",
       },
     ],
     for_whom:

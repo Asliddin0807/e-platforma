@@ -19,15 +19,16 @@ export const HeroComponent = () => {
       alignItems={"center"}
       justifyContent={"center"}
       mt={4}
-      mx={"100px"}
+      mx={"auto"}
+      w={"100%"}
     >
       <Grid
-        p={2}
+        p={1}
         gridTemplateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
         bg={"gray.200"}
         _dark={{ bg: "yellow.600" }}
-        w={{ base: "90%", md: "full" }}
-        gap={2}
+        w={{ base: "100%", md: "full" }}
+        gap={15}
         borderRadius={"md"}
         boxShadow={"md"}
         alignItems={"center"}
@@ -51,10 +52,15 @@ export const HeroComponent = () => {
             erda siz barcha pullik kurslarni bepul o'rganishingiz mumkin.
           </Text>
         </Box>
-
-        <VerticalCarousel dataCarousel={dataCarousel} />
+        <Box ml={10}>
+          <VerticalCarousel dataCarousel={dataCarousel} />
+        </Box>
       </Grid>
-      <Flex alignItems={"start"}  justifyContent={'start'} flexDirection={{ base: "column", md: 'column', xl: "row" }}>
+      <Flex
+        alignItems={"start"}
+        justifyContent={"start"}
+        flexDirection={{ base: "column", md: "column", xl: "row" }}
+      >
         <CodeBlocks
           style="row"
           codeColor="yellow.500"
@@ -67,7 +73,7 @@ export const HeroComponent = () => {
         />
       </Flex>
 
-      <Box w={{ base: "400px", md: "full" }} mt={10}>
+      <Box w={{ base: "320px", md: "100%" }} mt={10}>
         <Marquee
           gradient={false}
           speed={30}

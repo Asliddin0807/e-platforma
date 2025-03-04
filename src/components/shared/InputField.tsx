@@ -10,6 +10,7 @@ interface Props {
   change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   areachange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   big: true | false;
+  name?: string;
 }
 
 export default function InputField({
@@ -19,6 +20,7 @@ export default function InputField({
   placeholder,
   value,
   big,
+  name,
   areachange,
 }: Props) {
   return (
@@ -29,6 +31,7 @@ export default function InputField({
           onChange={change}
           value={value}
           variant="subtle"
+          name={name}
         />
       ) : (
         <Textarea
@@ -36,6 +39,7 @@ export default function InputField({
           variant="subtle"
           onChange={areachange}
           value={value}
+          name={name}
         />
       )}
     </Field>

@@ -1,7 +1,7 @@
 "use client";
 import { Box, Button, Flex, useBreakpointValue } from "@chakra-ui/react";
-import { useState } from "react";
-import { course_data } from "../../Local_data/datas";
+import { useEffect, useState } from "react";
+
 import { IProducts } from "@/Interfaces/Product";
 import {
   MenuContent,
@@ -9,22 +9,33 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@/components/ui/menu";
-import CourseCard from "../CourseCard";
+import CourseCard from "@/components/shared/CourseCard";
+import CourseService from "@/Services/courses";
 
 export default function ButtonsCategory() {
-  const [data, setData] = useState<IProducts[]>(course_data);
+  const [data, setData] = useState<IProducts[]>([]);
   const [text, setText] = useState<string>("Hammasi");
+
+  const getData = async () => {
+    const { data } = await CourseService.getCourses();
+    setData(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const buttonHandler = (text: string) => {
     if (text !== "Hammasi") {
-      const newData = course_data.filter((c) => c.category == text);
+      const newData = data.filter((c) => c.category == text);
       setData(newData);
       setText(text);
     } else {
       setText(text);
-      setData(course_data);
+      getData();
+      setData(data);
     }
   };
   return (
@@ -33,7 +44,6 @@ export default function ButtonsCategory() {
         gap={2}
         mt={4}
         flexDirection={{ base: "column", md: "row", xl: "row" }}
-
       >
         {isMobile ? (
           <Box>
@@ -44,28 +54,23 @@ export default function ButtonsCategory() {
                 </Button>
               </MenuTrigger>
               <MenuContent>
-                {[
-                  "Hammasi",
-                  "Frontend",
-                  "Backend",
-                  "Mobile",
-                  "Web",
-                  "Game",
-                ].map((item, idx) => (
-                  <MenuItem
-                    value={item}
-                    key={idx}
-                    onClick={() => buttonHandler(item)}
-                  >
-                    {item}
-                  </MenuItem>
-                ))}
+                {["Hammasi", "Frontend", "Backend", "Mobile", "Loyha"].map(
+                  (item, idx) => (
+                    <MenuItem
+                      value={item}
+                      key={idx}
+                      onClick={() => buttonHandler(item)}
+                    >
+                      {item}
+                    </MenuItem>
+                  )
+                )}
               </MenuContent>
             </MenuRoot>
           </Box>
         ) : (
           <Box display={"flex"} gap={2}>
-            {["Hammasi", "Frontend", "Backend", "Mobile", "Web", "Game"].map(
+            {["Hammasi", "Frontend", "Backend", "Mobile", "Loyha"].map(
               (item, idx) => (
                 <Button
                   key={idx}
@@ -85,7 +90,6 @@ export default function ButtonsCategory() {
         mt={4}
         flexWrap={"wrap"}
         flexShrink={1}
-
         flexDirection={{ base: "column", md: "row", xl: "row" }}
       >
         {data.map((item, idx) => (

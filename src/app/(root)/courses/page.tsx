@@ -1,9 +1,6 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import { course_data } from "@/components/Local_data/datas";
-import CustomImage from "@/components/shared/Image";
-import StarRating from "@/components/shared/Icons/Stars";
-import ButtonsCategory from "@/components/shared/Hero/HeroCourses";
-import { CourseBread } from "@/components/shared/C_Detail";
+import { Box, Text } from "@chakra-ui/react";
+import AllCourses from "@/components/shared/AllCourses";
+import { CourseBread } from "@/components/shared/Breads";
 
 export default function CoursesPage() {
   return (
@@ -12,7 +9,7 @@ export default function CoursesPage() {
         Video kurslar
       </Text>
       <CourseBread title_one={"Bosh sahifa"} title_two={"Kurslar"} link="/" />
-      <ButtonsCategory />
+      <AllCourses />
     </Box>
   );
 }

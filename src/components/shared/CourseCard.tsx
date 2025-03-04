@@ -25,7 +25,7 @@ export default function CourseCard({ item }: Props) {
       <Text fontSize={"22px"} mt={2}>
         {item.title}
       </Text>
-      <StarRating rating={item.rate.rates} size={20} />
+      <StarRating rating={item?.rate?.rates} size={20} />
     </Box>
   );
 }

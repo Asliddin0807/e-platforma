@@ -21,7 +21,6 @@ const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
     },
     [Autoplay()]
   );
-  console.log(dataCarousel)
   return (
     <section className="emblav">
       <div className="embla__viewportv" ref={emblaRef}>

@@ -1,22 +1,20 @@
-import { CourseBread } from "@/components/shared/C_Detail";
+import { CourseBread } from "@/components/shared/Breads";
 import DetailButton from "@/components/shared/DetailButton";
 import Icons from "@/components/shared/Icons/Icons";
-import StarRating from "@/components/shared/Icons/Stars";
+
 import CustomImage from "@/components/shared/Image";
-import { course_data } from "@/components/Local_data/datas";
 
 import { IProducts } from "@/Interfaces/Product";
 import {
   GridItem,
   Box,
-  Button,
   Center,
   Flex,
   Grid,
   HStack,
   Text,
 } from "@chakra-ui/react";
-import { FiEye } from "react-icons/fi";
+import CourseService from "@/Services/courses";
 
 export default async function Course({
   params,
@@ -38,10 +36,9 @@ export default async function Course({
 
   const ids = (await params).slug;
 
-  const course: IProducts =
-    course_data.find((c) => c.slug === ids) ?? defaultCourse;
-  const parts: string[] = course.description.split("🔹");
-  const list: string[] = course.for_whom.split("✔");
+  const { data } = (await CourseService.getCourse(ids)) ?? defaultCourse;
+  const parts: string[] | undefined = data?.description.split("🔹");
+  const list: string[] | undefined = data?.for_whom.split("✔");
 
   return (
     <Box
@@ -50,16 +47,17 @@ export default async function Course({
       alignItems={"center"}
       flexDirection={"column"}
       mt={2}
-      p={2}
+      p={4}
+      mx={"auto"}
     >
       <CourseBread
         title_one={"Kurslar"}
-        title_two={course.title}
+        title_two={data?.title}
         link="courses"
       />
       {/* Header section */}
       <Box
-        w={"84%"}
+        w={"full"}
         bg={"gray.800"}
         _light={{ bg: "gray.300" }}
         p={4}
@@ -74,22 +72,22 @@ export default async function Course({
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Box>
+        <Box w={"96%"}>
           <Text fontSize={"25px"} fontWeight={"bold"}>
-            {course?.title}
+            {data?.title}
           </Text>
-          {parts.map((part, index) => (
+          {parts?.map((part, index) => (
             <Text key={index}>
               {index === 0 ? part.trim() : `🔹 ${part.trim()}`}
             </Text>
           ))}
         </Box>
         <Box
-          w={{ base: "100%", md: "100%", xl: "84%" }}
+          w={{ base: "100%", md: "100%", xl: "50%" }}
           position={"relative"}
           userSelect={"none"}
         >
-          <CustomImage product={course} />
+          <CustomImage product={data} />
           <Center
             w={"50px"}
             h={"50px"}
@@ -108,7 +106,7 @@ export default async function Course({
         alignItems={"start"}
         flexDirection={{ base: "column", md: "column", xl: "row" }}
         mb={20}
-        w={"84%"}
+        w={"100%"}
       >
         <Box w={{ base: "100%", md: "100%", xl: "65%" }} mt={5}>
           <Grid
@@ -124,7 +122,10 @@ export default async function Course({
             borderRadius={"md"}
             placeItems={"center"}
           >
-            {course.project.map((item, idx) => (
+            <Text textAlign={"start"} fontSize={"20px"} fontWeight={"bold"}>
+              Nimalarni o'rganasiz:
+            </Text>
+            {data?.project.map((item, idx) => (
               <GridItem
                 key={idx}
                 display={"flex"}
@@ -151,10 +152,10 @@ export default async function Course({
             <Text fontSize={"20px"} fontWeight={"bold"}>
               Kurs rejasi
             </Text>
-            {course.video_course.map((item, idx) => (
+            {data?.video_course.map((item, idx) => (
               <Flex key={idx} alignItems={"center"} mt={2} gap={4}>
                 <Icons iconName={"BiVideo"} />
-                <Text># {item.text}</Text>
+                <Text>{item.title}</Text>
               </Flex>
             ))}
           </Box>
@@ -168,7 +169,7 @@ export default async function Course({
             <Text fontSize={"20px"} fontWeight={"bold"}>
               Kim uchun?
             </Text>
-            {list.map((item, index) => (
+            {list?.map((item, index) => (
               <Text key={index}>
                 {index === 0 ? item.trim() : `• ${item.trim()}`}
               </Text>
@@ -176,7 +177,7 @@ export default async function Course({
           </Box>
         </Box>
         <Box w={{ base: 0, md: 0, xl: "35%" }} position={"relative"} mt={5}>
-          <DetailButton course={course} />
+          <DetailButton course={data} />
         </Box>
       </HStack>
     </Box>

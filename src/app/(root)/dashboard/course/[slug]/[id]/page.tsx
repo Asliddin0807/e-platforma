@@ -1,6 +1,6 @@
 "use client";
 
-import { CourseBread } from "@/components/shared/C_Detail";
+import { CourseBread } from "@/components/shared/Breads";
 import dynamic from "next/dynamic";
 import Icons from "@/components/shared/Icons/Icons";
 import { course_data } from "@/components/Local_data/datas";
@@ -9,6 +9,8 @@ import { IProducts } from "@/Interfaces/Product";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useParams } from "next/navigation";
 import { useRouter } from "nextjs-toploader/app";
+import CourseService from "@/Services/courses";
+import { useEffect, useState } from "react";
 
 const Editors = dynamic(() => import("@/components/shared/Editor/Editor"), {
   ssr: false,
@@ -17,24 +19,37 @@ const Editors = dynamic(() => import("@/components/shared/Editor/Editor"), {
 const Page = () => {
   const params = useParams<{ id: string; slug: string }>();
   const { id, slug } = params;
-  const course: IProducts | undefined = course_data.find(
-    (c) => c.slug === slug
-  );
+  const [course, setCourse] = useState<IProducts | null>(null);
 
-  if (!course) return <div>Курс не найден</div>;
+  const getCourse = async () => {
+    const { data } = await CourseService.getCourse(slug);
+    setCourse(data);
+  };
 
-  const id_video = course.video_course.find((c) => c.id === id) || null;
-  const router = useRouter()
+  useEffect(() => {
+    getCourse();
+  }, []);
+
+  const id_video = course?.video_course.find((c) => c.id === id) || null;
+  const router = useRouter();
+
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      p={4}
+      mt={2}
+      mx={"auto"}
+    >
       <CourseBread
         title_one="Kurslar"
-        title_two={course.title}
+        title_two={`${course?.title}`}
         link="courses"
       />
 
       <Box
-        w="84%"
+        w="full"
         display="flex"
         flexDirection={{ base: "column", xl: "row" }}
         gap={2}
@@ -42,7 +57,7 @@ const Page = () => {
         <Box w={{ base: "100%", xl: "70%" }}>
           <Video />
           <Text fontSize="22px" mt={2}>
-            #{id_video?.text}
+            {id_video?.title}
           </Text>
         </Box>
 
@@ -51,10 +66,10 @@ const Page = () => {
           h="444px"
           overflowY="scroll"
           bg="gray.900"
-          _light={{ bg: 'gray.300' }}
+          _light={{ bg: "gray.300" }}
           mb={2}
         >
-          {course.video_course.map((item, idx) => (
+          {course?.video_course.map((item, idx) => (
             <Flex
               key={idx}
               alignItems="center"
@@ -65,14 +80,20 @@ const Page = () => {
               mx={4}
             >
               <Icons iconName="BiVideo" />
-              <Button variant="plain" fontSize="17px" onClick={() => router.push(`/dashboard/course/${slug}/${item.id}`)}>
-                #{item.text}
+              <Button
+                variant="plain"
+                fontSize="14px"
+                onClick={() =>
+                  router.push(`/dashboard/course/${slug}/${item.id}`)
+                }
+              >
+                #{item.title}
               </Button>
             </Flex>
           ))}
         </Box>
       </Box>
-      <Box w="84%" mt={20} mb={20}>
+      <Box w="full" mt={20} mb={20}>
         <Text fontSize={"22px"}>Amaliyotda o'zingizni sinab ko'ring!</Text>
         <Editors />
       </Box>

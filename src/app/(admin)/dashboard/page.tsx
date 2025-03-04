@@ -5,8 +5,11 @@ import Icons from "@/components/shared/Icons/Icons";
 import { course_data } from "@/components/Local_data/datas";
 import CourseCard from "@/components/shared/CourseCard";
 import Link from "next/link";
+import CourseService from "@/Services/courses";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const { data } = await CourseService.getCourses();
+
   return (
     <Box minH={"10vh"} w={"100%"} p={2} mt={2}>
       <Text fontSize={"30px"} fontWeight={"bold"} mt={"10px"} mb={"10px"}>
@@ -41,12 +44,33 @@ export default function Dashboard() {
       <DashboardChart />
       <Box mt={10}>
         <HStack justifyContent={"space-between"} mx={"15px"}>
-          <Text fontSize={"30px"} fontWeight={"bold"}>
+          <Text fontSize={"35px"} fontWeight={"bold"}>
             Kurslar
           </Text>
-          <Link href={"/course_add"} style={{ fontSize: "20px" }}>
-            Kurs qo'shish
-          </Link>
+          <Box display={"flex"} alignItems={"center"} gap={2}>
+            <Link
+              href={"/course_add"}
+              style={{
+                fontSize: "15px",
+                backgroundColor: "green",
+                padding: "4px",
+                borderRadius: "5px",
+              }}
+            >
+              Kurs qo'shish
+            </Link>
+            <Link
+              href={"/course_add"}
+              style={{
+                fontSize: "15px",
+                backgroundColor: "red",
+                padding: "4px",
+                borderRadius: "5px",
+              }}
+            >
+              Kursni o'chirish
+            </Link>
+          </Box>
         </HStack>
         <Flex
           gap={2}
@@ -57,7 +81,7 @@ export default function Dashboard() {
           w={"full"}
           flexDirection={{ base: "column", md: "row", xl: "row" }}
         >
-          {course_data.map((item, idx) => (
+          {data.map((item, idx) => (
             <CourseCard key={idx} item={item} />
           ))}
         </Flex>

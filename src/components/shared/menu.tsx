@@ -7,10 +7,13 @@ import {
   MenuTrigger,
   MenuTriggerItem,
 } from "@/components/ui/menu";
-import { useState } from "react";
 
-export default function Menu() {
-  const [select, setSelect] = useState<string>("Yo'nalish");
+interface Props {
+  select: string;
+  setSelect: (value: string) => void;
+}
+
+export default function Menu({ select, setSelect }: Props) {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
@@ -25,9 +28,15 @@ export default function Menu() {
         <MenuItem value="Frontend" onClick={() => setSelect("Frontend")}>
           Frontend
         </MenuItem>
-        <MenuItem value="Mobile" onClick={() => setSelect("Mobile")}>Mobile</MenuItem>
-        <MenuItem value="Full Stack" onClick={() => setSelect("Full Stack")}>Full Stack</MenuItem>
-        <MenuItem value="Loyha" onClick={() => setSelect("Loyha")}>Loyha</MenuItem>
+        <MenuItem value="Mobile" onClick={() => setSelect("Mobile")}>
+          Mobile
+        </MenuItem>
+        <MenuItem value="Full Stack" onClick={() => setSelect("Full Stack")}>
+          Full Stack
+        </MenuItem>
+        <MenuItem value="Loyha" onClick={() => setSelect("Loyha")}>
+          Loyha
+        </MenuItem>
       </MenuContent>
     </MenuRoot>
   );

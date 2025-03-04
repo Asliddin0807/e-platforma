@@ -14,15 +14,15 @@ export default function Home() {
       mt={4}
     >
       <HeroComponent />
-      <CheckUser />
+      {/* <CheckUser /> */}
       <Flex
         gap={2}
         mt={10}
         justifyContent={"space-evenly"}
         flexWrap={"wrap"}
         flexShrink={1}
-        w={"full"}
-        flexDirection={{ base: "column", md: "row", xl: "row" }}
+        // w={"full"}
+        flexDirection={{ base: "column", md: "column", xl: "row" }}
       >
         {course_data.slice(0, 3).map((item, idx) => (
           <CourseCard key={idx} item={item} />

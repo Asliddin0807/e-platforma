@@ -1,20 +1,26 @@
 "use client";
-import { Box, Button, Link, Separator, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Icons from "./Icons/Icons";
 import { navButtons } from "@/constants/navbar_buttons";
 import { useRouter } from "nextjs-toploader/app";
 import { usePathname } from "next/navigation";
+import { useAuth, useUser } from "@clerk/nextjs";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase/firebase";
+import { IAuth } from "@/Interfaces/auth";
+import { useEffect, useState } from "react";
 
 export default function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
+
 
   return (
     <Box
       w={"full"}
       mt={-2}
       h={"full"}
-      minH={'100vh'}
+      minH={"100vh"}
       bg={"gray.900"}
       _light={{ bg: "gray.300" }}
     >
@@ -31,7 +37,12 @@ export default function Sidebar() {
             _hover={{ bg: "gray.800", _light: { bg: "gray.400" } }}
             cursor={"pointer"}
             onClick={() => router.push(item.pathname)}
-            bg={item.pathname == pathname ? 'gray.400' : ''}
+            bg={item.pathname == pathname ? "gray.700" : ""}
+            color={"white"}
+            _light={{
+              bg: item.pathname == pathname ? "gray.500" : "",
+              color: "black",
+            }}
           >
             <Icons iconName={item.icon} />
             <Text fontWeight={"bold"}>{item.name}</Text>
