@@ -1,7 +1,7 @@
 import { IProducts } from "@/Interfaces/Product";
 import { IData } from "@/Interfaces/Icons";
 
-export const course_data: IProducts[] = [
+export const course_data = [
   {
     title: "JavaScript asoslar",
     image:

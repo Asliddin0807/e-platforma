@@ -1,6 +1,6 @@
 import { Box, Button, Text } from "@chakra-ui/react";
 import React from "react";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 import { LANGUAGE } from "@/constants/editor_constants";
 import { CODE_SNIPPETS } from "@/constants/editor_constants";
 

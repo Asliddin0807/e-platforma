@@ -1,6 +1,6 @@
 import { CourseBread } from "@/components/shared/Breads";
 import DetailButton from "@/components/shared/DetailButton";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 
 import CustomImage from "@/components/shared/Image";
 
@@ -38,7 +38,7 @@ export default async function Course({
 
   const { data } = (await CourseService.getCourse(ids)) ?? defaultCourse;
   const parts: string[] | undefined = data?.description.split("🔹");
-  const list: string[] | undefined = data?.for_whom.split("✔");
+  const list: string[] | undefined = data?.for_whom.split("•");
 
   return (
     <Box

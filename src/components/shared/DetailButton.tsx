@@ -2,31 +2,50 @@
 
 import { Box, Button, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import { FiEye } from "react-icons/fi";
-import StarRating from "./Icons/Stars";
+import StarRating from "../Icons/Stars";
 import { IProducts } from "@/Interfaces/Product";
 import { useRouter } from "nextjs-toploader/app";
 import { useAuth } from "@clerk/nextjs";
 import { Toaster, toaster } from "@/components/ui/toaster";
+import { CheckUser } from "@/Services/checkUser";
+import { useState } from "react";
 
 interface Props {
   course: IProducts;
 }
 
 export default function DetailButton({ course }: Props) {
+  const [loading, setLoading] = useState<boolean>(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
   const router = useRouter();
-
   const { userId } = useAuth();
 
-  const courseView = () => {
-    if (!userId) {
-      toaster.error({
-        title: "Kursga o'tish uchun tizimga kiring!",
-      });
-    } else {
-      router.push(
-        `/dashboard/course/${course.slug}/${course.video_course[0].id}`
+  const courseView = async () => {
+    setLoading(true);
+    if (userId) {
+      const { message, status } = await CheckUser.addMyCourse(
+        course.slug,
+        userId
       );
+      if (status === "200") {
+        toaster.success({
+          title: message,
+        });
+        router.push(
+          `/dashboard/course/${course.slug}/${course.video_course[0].id}`
+        );
+        setLoading(false);
+      } else {
+        toaster.error({
+          title: message,
+        });
+        setLoading(false);
+      }
+    } else {
+      toaster.error({
+        title: "Iltimos login yoki avtorizatsiyadan o'ting",
+      });
+      setLoading(false);
     }
   };
 

@@ -1,7 +1,7 @@
 import { Box, Button, Flex, HStack, Text } from "@chakra-ui/react";
 import DashboardChart from "@/components/shared/Bar";
 import { admin_data } from "@/constants/admin_data";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 import { course_data } from "@/components/Local_data/datas";
 import CourseCard from "@/components/shared/CourseCard";
 import Link from "next/link";
@@ -60,7 +60,7 @@ export default async function Dashboard() {
               Kurs qo'shish
             </Link>
             <Link
-              href={"/course_add"}
+              href={"/course_delete"}
               style={{
                 fontSize: "15px",
                 backgroundColor: "red",

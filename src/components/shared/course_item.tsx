@@ -8,6 +8,7 @@ interface Course {
   id: string;
   title: string;
   link: string;
+  isComplete: boolean;
 }
 
 interface Props {
@@ -18,7 +19,10 @@ interface Props {
 export default function CourseItems({ courses, setCourses }: Props) {
   // Функция добавления нового курса
   const addCourse = () => {
-    setCourses([...courses, { id: `${Date.now()}`, title: "", link: "" }]);
+    setCourses([
+      ...courses,
+      { id: `${Date.now()}`, title: "", link: "", isComplete: false },
+    ]);
   };
 
   // Функция обновления значений

@@ -1,19 +1,18 @@
 "use client";
 import { Box, Text } from "@chakra-ui/react";
-import Icons from "./Icons/Icons";
-import { navButtons } from "@/constants/navbar_buttons";
+import Icons from "../Icons/Icons";
+import { navButtons } from "@/constants/sidebar_buttons";
 import { useRouter } from "nextjs-toploader/app";
 import { usePathname } from "next/navigation";
-import { useAuth, useUser } from "@clerk/nextjs";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase/firebase";
-import { IAuth } from "@/Interfaces/auth";
-import { useEffect, useState } from "react";
+import { ISide } from "@/Interfaces/sidebar";
 
-export default function Sidebar() {
+interface iGetSide {
+  data: ISide[];
+}
+
+export default function Sidebar({ data }: iGetSide) {
   const router = useRouter();
   const pathname = usePathname();
-
 
   return (
     <Box
@@ -25,7 +24,7 @@ export default function Sidebar() {
       _light={{ bg: "gray.300" }}
     >
       <Box mt={20} p={5} position={"fixed"} w={"20%"} top={8}>
-        {navButtons.map((item, idx) => (
+        {data.map((item, idx) => (
           <Box
             key={idx}
             display={"flex"}

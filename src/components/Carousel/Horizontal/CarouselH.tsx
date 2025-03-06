@@ -2,7 +2,7 @@ import React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import "./CarouselH.css";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 
 interface Option {
   loop?: boolean;

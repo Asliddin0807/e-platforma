@@ -3,6 +3,7 @@ interface Video {
   title: string; // yes
   link: string; // yes
   id: string; //auto
+  isComplete: boolean;
 }
 
 interface Comments {

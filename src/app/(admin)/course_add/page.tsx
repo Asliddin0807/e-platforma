@@ -8,6 +8,7 @@ import {
   FileUploadList,
   FileUploadRoot,
 } from "@/components/ui/file-upload";
+import { toaster } from "@/components/ui/toaster";
 import { IProducts } from "@/Interfaces/Product";
 import { ITag } from "@/Interfaces/tag";
 import { db } from "@/lib/firebase/firebase";
@@ -28,7 +29,7 @@ import {
   DocumentSnapshot,
   getDoc,
 } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function AddCourse() {
   const [title, setTitle] = useState<string>("");
@@ -40,8 +41,9 @@ export default function AddCourse() {
   const [imageLink, setLink] = useState<string>("");
   const [tgs, setTgs] = useState<ITag | null>(null);
   const [courses, setCourses] = useState([
-    { id: `${Date.now()}`, title: "", link: "" },
+    { id: `${Date.now()}`, title: "", link: "", isComplete: false },
   ]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const selectHandler = (item: string) => {
     setTagdata((prevTagData) => {
@@ -59,7 +61,6 @@ export default function AddCourse() {
       const docSnap: DocumentSnapshot<DocumentData> = await getDoc(findDoc);
 
       if (!docSnap.exists()) {
-        console.warn("Документ не найден");
         return null;
       }
 
@@ -68,12 +69,12 @@ export default function AddCourse() {
 
       return data;
     } catch (error) {
-      console.error("Ошибка при получении тегов:", error);
       return null;
     }
   }
 
   const sendForm = async () => {
+    setLoading(true);
     const onData: IProducts = {
       title: title,
       category: select,
@@ -89,8 +90,28 @@ export default function AddCourse() {
       video_course: courses,
       comments: [],
     };
-    const { message } = await CourseService.createCourse(onData);
-    alert(message);
+    const { message, status } = await CourseService.createCourse(onData);
+    if (status === "200") {
+      toaster.success({
+        title: message,
+      });
+      setLoading(false);
+    } else {
+      toaster.success({
+        title: message,
+      });
+      setLoading(false);
+    }
+    setTitle("");
+    setSlug("");
+    setDesc("");
+    setSelect("");
+    setWhom("");
+    setLink("");
+    setCourses([
+      { id: `${Date.now()}`, title: "", link: "", isComplete: false },
+    ]);
+    setTagdata([]);
   };
 
   useEffect(() => {
@@ -208,7 +229,9 @@ export default function AddCourse() {
           justifyContent={"space-between"}
           mt={2}
         >
-          <Button onClick={sendForm}>Kursni yuklash</Button>
+          <Button onClick={sendForm} loading={loading}>
+            Kursni yuklash
+          </Button>
           <Button colorPalette={"red"}>Orqaga</Button>
         </ButtonGroup>
       </Box>

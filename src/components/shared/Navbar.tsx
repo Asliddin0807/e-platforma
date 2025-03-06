@@ -7,33 +7,29 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import Icons from "./Icons/Icons";
+import Icons from "../Icons/Icons";
 import { ColorModeButton, useColorMode } from "@/components/ui/color-mode";
 import { useRouter } from "nextjs-toploader/app";
 import NavbarDrawer from "./NavbarDrawer";
 import { SignedIn, useAuth, UserButton } from "@clerk/nextjs";
 import { dark, neobrutalism } from "@clerk/themes";
 import { useEffect, useState } from "react";
-import { navButtons } from "@/constants/navbar_buttons";
+import { CheckUser } from "@/Services/checkUser";
+import { IAuth } from "@/Interfaces/auth";
 
 export default function Navbar() {
   const router = useRouter();
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { userId } = useAuth();
   const { colorMode } = useColorMode();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const handleScroll = (): void => {
-    if (window.scrollY > 90) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+  const [profile, setProfile] = useState<IAuth | null>(null);
+  const getUser = async () => {
+    const { data } = await CheckUser.getUser(userId);
+    setProfile(data);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    getUser();
   }, []);
 
   return (
@@ -50,7 +46,7 @@ export default function Navbar() {
         fontSize={"22px"}
         fontWeight={"bold"}
         bg={"gray.900"}
-        _light={{ bg: 'gray.300' }}
+        _light={{ bg: "gray.300" }}
         borderBottom={"1px solid gray"}
       >
         <HStack alignItems={"center"} justifyContent={"space-between"}>
@@ -68,7 +64,6 @@ export default function Navbar() {
           </Box>
           <Box display={"flex"} alignItems={"center"} gap={2}>
             <ColorModeButton />
-
             {userId ? (
               <SignedIn>
                 <UserButton
@@ -85,6 +80,11 @@ export default function Navbar() {
                 Kirish
                 <Icons iconName={"BiLogIn"} />
               </Button>
+            )}
+            {profile?.status === "admin" && (
+              <Link href={"/dashboard"}>
+                <Button>Admin</Button>
+              </Link>
             )}
           </Box>
         </HStack>

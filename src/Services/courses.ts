@@ -5,8 +5,10 @@ import {
   collection,
   deleteDoc,
   doc,
+  DocumentData,
   getDoc,
   getDocs,
+  Query,
   query,
   where,
 } from "firebase/firestore";
@@ -20,6 +22,12 @@ interface IGetCoursesResponse {
 interface IGetCourse {
   data: IProducts;
   status: string;
+  // message?: string
+}
+
+interface IDelete {
+  status: string;
+  message: string;
 }
 
 export const CourseService = {
@@ -54,16 +62,30 @@ export const CourseService = {
     }
   },
 
-  async deleteCourse(id: string) {
+  async deleteCourse(slug: string): Promise<IDelete> {
     try {
-      await deleteDoc(doc(db, "courses", id));
+      const q: Query<DocumentData, DocumentData> = query(
+        collection(db, "courses"),
+        where("slug", "==", slug)
+      );
+
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        return { status: "404", message: "Not found" };
+      }
+
+      // Удаляем все найденные документы с таким slug
+      for (const document of querySnapshot.docs) {
+        await deleteDoc(doc(db, "courses", document.id));
+      }
+
       return { message: "Success delete", status: "200" };
     } catch (error) {
       return { message: "Error delete", status: "400" };
     }
   },
 
-  async updateCourse(id: string) {},
   async getCourse(id: string): Promise<IGetCourse> {
     const courseRef = collection(db, "courses");
     const q = query(courseRef, where("slug", "==", id));

@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Box, HStack, Text } from "@chakra-ui/react";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 
 interface Props {
   id: number;

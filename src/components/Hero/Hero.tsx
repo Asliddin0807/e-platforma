@@ -1,22 +1,37 @@
 "use client";
 import { Flex, Box, Text, Grid, useBreakpointValue } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VerticalCarousel from "../Carousel/Carousel";
-import { CodeBlocks } from "../Animation_Text";
+import { CodeBlocks } from "../shared/Animation_Text";
 import Icons from "../Icons/Icons";
-import { iconData } from "../../Local_data/datas";
-import CarouselH from "../Carousel/Horizontal/CarouselH";
+import { iconData } from "../Local_data/datas";
+
 import Marquee from "react-fast-marquee";
 import { dataCarousel } from "@/constants/carousel_data";
+import { IProducts } from "@/Interfaces/Product";
+import CourseService from "@/Services/courses";
+import CourseCard from "../shared/CourseCard";
 
 export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
   const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1000px" });
+
+  const [data, setData] = useState<IProducts[]>([]);
+
+  const getData = async () => {
+    const { data } = await CourseService.getCourses();
+    setData(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <Box
       display={"flex"}
       flexDirection={"column"}
-      alignItems={"center"}
+      // alignItems={"center"}
       justifyContent={"center"}
       mt={4}
       mx={"auto"}
@@ -101,6 +116,7 @@ export const HeroComponent = () => {
         </Marquee>
       </Box>
     </Box>
+
     // </Box>
   );
 };

@@ -1,11 +1,11 @@
 import { Box, Button, useBreakpointValue } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
-import Output from "@/components/shared/Editor/Output";
-import ProgLanguages from "@/components/shared/Editor/Prog_lang";
+import Output from "@/components/Editor/Output";
+import ProgLanguages from "@/components/Editor/Prog_lang";
 import { CODE_SNIPPETS } from "@/constants/editor_constants";
 import { execute } from "@/Services/code_api";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 import { editor } from "monaco-editor";
 
 export default function Editors() {

@@ -1,3 +1,4 @@
+"use client";
 import {
   DrawerBackdrop,
   DrawerBody,
@@ -10,11 +11,28 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Box, Button, Text } from "@chakra-ui/react";
-import Icons from "./Icons/Icons";
+import Icons from "../Icons/Icons";
 import Link from "next/link";
-import { navButtons } from "@/constants/navbar_buttons";
+import { navButtons } from "@/constants/sidebar_buttons";
+import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { CheckUser } from "@/Services/checkUser";
 
 export default function NavbarDrawer() {
+  const [dashboard, setDashboard] = useState<boolean>(false);
+  const { userId } = useAuth();
+
+  const checkUser = async () => {
+
+    const { data } = await CheckUser.getUser(userId);
+    if (data.status === "admin") {
+      setDashboard(true);
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
   return (
     <Box>
       <DrawerRoot placement={"start"}>
@@ -31,11 +49,16 @@ export default function NavbarDrawer() {
           <DrawerBody>
             {navButtons.map((item, idx) => (
               <Link href={item.pathname} key={idx}>
-                <Button mt={2} w={"100%"} size={"xs"} variant={'subtle'}>
+                <Button mt={2} w={"100%"} size={"xs"} variant={"subtle"}>
                   {item.name}
                 </Button>
               </Link>
             ))}
+            {dashboard && (
+              <Link href={"/dashboard"}>
+                <Button w={'100%'} mt={2} size={'xs'}>Admin</Button>
+              </Link>
+            )}
           </DrawerBody>
           <DrawerFooter></DrawerFooter>
           <DrawerCloseTrigger />

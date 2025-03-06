@@ -11,31 +11,32 @@ import {
 } from "@/components/ui/menu";
 import CourseCard from "@/components/shared/CourseCard";
 import CourseService from "@/Services/courses";
+import Empty from "./Empty";
 
 export default function ButtonsCategory() {
-  const [data, setData] = useState<IProducts[]>([]);
+  const [allData, setAllData] = useState<IProducts[]>([]);
+  const [filteredData, setFilteredData] = useState<IProducts[]>([]);
   const [text, setText] = useState<string>("Hammasi");
 
-  const getData = async () => {
-    const { data } = await CourseService.getCourses();
-    setData(data);
-  };
-
   useEffect(() => {
-    getData();
+    const fetchData = async () => {
+      const { data } = await CourseService.getCourses();
+      setAllData(data);
+      setFilteredData(data); // Изначально показываем все данные
+    };
+
+    fetchData();
   }, []);
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  const buttonHandler = (text: string) => {
-    if (text !== "Hammasi") {
-      const newData = data.filter((c) => c.category == text);
-      setData(newData);
-      setText(text);
+  const buttonHandler = (category: string) => {
+    setText(category);
+
+    if (category === "Hammasi") {
+      setFilteredData(allData); // Показываем все данные
     } else {
-      setText(text);
-      getData();
-      setData(data);
+      setFilteredData(allData.filter((c) => c.category === category));
     }
   };
   return (
@@ -92,9 +93,14 @@ export default function ButtonsCategory() {
         flexShrink={1}
         flexDirection={{ base: "column", md: "row", xl: "row" }}
       >
-        {data.map((item, idx) => (
-          <CourseCard item={item} key={idx} />
-        ))}
+        {!filteredData.length ? (
+          <Empty
+            title={"Kurslar mavjud emas!"}
+            desc={"Kurslar tez orada qo'shiladi platformada qoling."}
+          />
+        ) : (
+          filteredData.map((item, idx) => <CourseCard item={item} key={idx} />)
+        )}
       </Flex>
     </>
   );

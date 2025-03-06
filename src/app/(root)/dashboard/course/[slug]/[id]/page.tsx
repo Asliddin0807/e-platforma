@@ -2,27 +2,38 @@
 
 import { CourseBread } from "@/components/shared/Breads";
 import dynamic from "next/dynamic";
-import Icons from "@/components/shared/Icons/Icons";
+import Icons from "@/components/Icons/Icons";
 import { course_data } from "@/components/Local_data/datas";
 import Video from "@/components/shared/Video";
 import { IProducts } from "@/Interfaces/Product";
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  Text,
+  Progress,
+  HStack,
+} from "@chakra-ui/react";
 import { useParams } from "next/navigation";
 import { useRouter } from "nextjs-toploader/app";
 import CourseService from "@/Services/courses";
 import { useEffect, useState } from "react";
+import { CheckUser } from "@/Services/checkUser";
+import { useAuth } from "@clerk/nextjs";
 
-const Editors = dynamic(() => import("@/components/shared/Editor/Editor"), {
+const Editors = dynamic(() => import("@/components/Editor/Editor"), {
   ssr: false,
 });
 
 const Page = () => {
   const params = useParams<{ id: string; slug: string }>();
   const { id, slug } = params;
-  const [course, setCourse] = useState<IProducts | null>(null);
+  const [course, setCourse] = useState<IProducts | undefined>(undefined);
+  const { userId } = useAuth();
 
   const getCourse = async () => {
-    const { data } = await CourseService.getCourse(slug);
+    const { data } = await CheckUser.getMyCourseItem(userId, slug);
     setCourse(data);
   };
 
@@ -32,6 +43,31 @@ const Page = () => {
 
   const id_video = course?.video_course.find((c) => c.id === id) || null;
   const router = useRouter();
+
+  const handleCheckedChange = async (id: string, isChecked: boolean) => {
+    setCourse((prev) => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        video_course: prev?.video_course.map((item) =>
+          item.id === id ? { ...item, isComplete: isChecked } : item
+        ),
+      };
+    });
+    await CheckUser.checkItem(userId, slug, id, isChecked);
+  };
+
+  const getCompletionPercentage = (course?: IProducts): number => {
+    if (!course || !course.video_course?.length) return 0; // Проверяем, есть ли курс и видео
+
+    const completedVideos = course.video_course.filter(
+      (video) => video.isComplete
+    ).length;
+    return Math.round((completedVideos / course.video_course.length) * 100);
+  };
+
+  // Использование:
+  const completionPercentage = getCompletionPercentage(course);
 
   return (
     <Box
@@ -62,13 +98,29 @@ const Page = () => {
         </Box>
 
         <Box
-          w={{ base: "100%", xl: "30%" }}
+          w={{ base: "100%", xl: "40%" }}
           h="444px"
           overflowY="scroll"
           bg="gray.900"
           _light={{ bg: "gray.300" }}
           mb={2}
+          p={2}
         >
+          <Progress.Root
+            defaultValue={0}
+            value={completionPercentage}
+            max={100}
+            variant="outline"
+            maxW="sm"
+          >
+            <HStack gap="5">
+              <Progress.Track flex="1">
+                <Progress.Range />
+              </Progress.Track>
+              <Progress.ValueText>{completionPercentage}%</Progress.ValueText>
+            </HStack>
+          </Progress.Root>
+
           {course?.video_course.map((item, idx) => (
             <Flex
               key={idx}
@@ -79,6 +131,17 @@ const Page = () => {
               p={1}
               mx={4}
             >
+              <Checkbox.Root
+                checked={item.isComplete}
+                onCheckedChange={(checked) =>
+                  handleCheckedChange(item.id, Boolean(checked.checked))
+                }
+              >
+                <Checkbox.HiddenInput />
+                <Checkbox.Control>
+                  <Checkbox.Indicator />
+                </Checkbox.Control>
+              </Checkbox.Root>
               <Icons iconName="BiVideo" />
               <Button
                 variant="plain"
@@ -87,7 +150,7 @@ const Page = () => {
                   router.push(`/dashboard/course/${slug}/${item.id}`)
                 }
               >
-                #{item.title}
+                {item.title}
               </Button>
             </Flex>
           ))}

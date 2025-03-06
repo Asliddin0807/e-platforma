@@ -2,7 +2,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useRouter } from "nextjs-toploader/app";
 import CustomImage from "./Image";
-import StarRating from "./Icons/Stars";
+import StarRating from "../Icons/Stars";
 import { IProducts } from "@/Interfaces/Product";
 
 interface Props {
