@@ -121,6 +121,20 @@ export const CheckUser = {
         return { status: "400", message: "User not found!" };
       }
 
+      const userData = userSnap.data();
+
+      // Check if the course is already in user's `myCourses` array
+      const isCourseAlreadyAdded = userData.myCourses?.some(
+        (existingCourse: IProducts) => existingCourse.slug === course.slug
+      );
+
+      if (isCourseAlreadyAdded) {
+        return {
+          status: "200",
+          message: "Davom etish mumkun!",
+        };
+      }
+
       // Добавляем курс в `myCourses`
       await updateDoc(userRef, {
         myCourses: arrayUnion(course),

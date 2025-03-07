@@ -28,12 +28,12 @@ export default function DetailButton({ course }: Props) {
         userId
       );
       if (status === "200") {
-        toaster.success({
-          title: message,
-        });
         router.push(
           `/dashboard/course/${course.slug}/${course.video_course[0].id}`
         );
+        toaster.success({
+          title: message,
+        });
         setLoading(false);
       } else {
         toaster.error({
@@ -91,7 +91,12 @@ export default function DetailButton({ course }: Props) {
           <Text fontSize={"18px"}>{course.rate.viewers} ko'rilgan</Text>
         </Flex>
       </Box>
-      <Button w={{ base: "", md: "", xl: "" }} mt={2} onClick={courseView}>
+      <Button
+        w={{ base: "", md: "", xl: "" }}
+        mt={2}
+        loading={loading}
+        onClick={courseView}
+      >
         Kursga kirish
       </Button>
     </Box>

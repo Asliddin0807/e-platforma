@@ -440,3 +440,80 @@ export const iconData: IData[] = [
     color: "gray",
   },
 ];
+
+export const project = [
+  {
+    id: "182901983901231",
+    title: "Google authorization",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    rating: {
+      rate: 4,
+      views: 10,
+    },
+    git_link: "",
+  },
+  {
+    id: "182901983901232",
+
+    title: "Google authorization",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    rating: {
+      rate: 4,
+      views: 10,
+    },
+    git_link: "",
+  },
+  {
+    id: "182901983901233",
+
+    title: "Google authorization",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    rating: {
+      rate: 4,
+      views: 10,
+    },
+    git_link: "",
+  },
+];
+
+export const blogs = [
+  {
+    title: "Blog company",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    description:
+      "jsalkajslkdjasdlk salkhdkjsadhjksahdj ahsakjldj lkjsajkd jsdkfdjk sdjfk jeruyiueertyeiury  xmvxncbvxcnvbmn wesijfkjlsdfjlksdj dshfjsdkfhskj skdjhfskjsdhfkjsh ksdfklsdjlfjklsdj hnvvnnvnvnxsleuruweyruiw isjflksjf idsfjuisdfui jdskffjjfjh sdopfiusdoif kdjsklfj kjdsfklsdfjl",
+    id: 434323,
+    rating: {
+      rate: 4,
+      viewers: 100,
+    },
+  },
+  {
+    title: "Blog company",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    description:
+      "jsalkajslkdjasdlk salkhdkjsadhjksahdj ahsakjldj lkjsajkd jsdkfdjk sdjfk jeruyiueertyeiury  xmvxncbvxcnvbmn wesijfkjlsdfjlksdj dshfjsdkfhskj skdjhfskjsdhfkjsh ksdfklsdjlfjklsdj hnvvnnvnvnxsleuruweyruiw isjflksjf idsfjuisdfui jdskffjjfjh sdopfiusdoif kdjsklfj kjdsfklsdfjl",
+    id: 434323,
+    rating: {
+      rate: 4,
+      viewers: 100,
+    },
+  },
+  {
+    title: "Blog company",
+    image:
+      "https://files.ably.io/ghost/prod/2023/12/choosing-the-best-javascript-frameworks-for-your-next-project.png",
+    description:
+      "jsalkajslkdjasdlk salkhdkjsadhjksahdj ahsakjldj lkjsajkd jsdkfdjk sdjfk jeruyiueertyeiury  xmvxncbvxcnvbmn wesijfkjlsdfjlksdj dshfjsdkfhskj skdjhfskjsdhfkjsh ksdfklsdjlfjklsdj hnvvnnvnvnxsleuruweyruiw isjflksjf idsfjuisdfui jdskffjjfjh sdopfiusdoif kdjsklfj kjdsfklsdfjl",
+    id: 434323,
+    rating: {
+      rate: 4,
+      viewers: 100,
+    },
+  },
+];

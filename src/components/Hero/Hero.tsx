@@ -10,7 +10,7 @@ import Marquee from "react-fast-marquee";
 import { dataCarousel } from "@/constants/carousel_data";
 import { IProducts } from "@/Interfaces/Product";
 import CourseService from "@/Services/courses";
-import CourseCard from "../shared/CourseCard";
+
 
 export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
@@ -31,7 +31,7 @@ export const HeroComponent = () => {
     <Box
       display={"flex"}
       flexDirection={"column"}
-      // alignItems={"center"}
+      alignItems={"center"}
       justifyContent={"center"}
       mt={4}
       mx={"auto"}
@@ -88,7 +88,7 @@ export const HeroComponent = () => {
         />
       </Flex>
 
-      <Box w={{ base: "320px", md: "100%" }} mt={10}>
+      <Box w={{ base: "100%", md: "100%" }} mt={10}>
         <Marquee
           gradient={false}
           speed={30}

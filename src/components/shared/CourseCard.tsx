@@ -14,7 +14,7 @@ export default function CourseCard({ item }: Props) {
   return (
     <Box
       position={"relative"}
-      w={{ base: "100%", md: "600px", xl: "330px" }}
+      w={{ base: "100%",  xl: "340px" }}
       border={"1px solid grey"}
       p={2}
       borderRadius={"md"}

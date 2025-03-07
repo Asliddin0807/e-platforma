@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import { IProducts } from "@/Interfaces/Product";
@@ -86,12 +86,14 @@ export default function ButtonsCategory() {
           </Box>
         )}
       </Flex>
-      <Flex
+      <Grid
         gap={5}
         mt={4}
-        flexWrap={"wrap"}
-        flexShrink={1}
-        flexDirection={{ base: "column", md: "row", xl: "row" }}
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 1fr)",
+          xl: "repeat(3, 1fr)",
+        }}
       >
         {!filteredData.length ? (
           <Empty
@@ -101,7 +103,7 @@ export default function ButtonsCategory() {
         ) : (
           filteredData.map((item, idx) => <CourseCard item={item} key={idx} />)
         )}
-      </Flex>
+      </Grid>
     </>
   );
 }

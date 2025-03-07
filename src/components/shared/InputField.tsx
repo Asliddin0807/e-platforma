@@ -3,8 +3,8 @@ import { Field } from "../ui/field";
 import React from "react";
 
 interface Props {
-  label: string;
-  helperText: string;
+  label?: string;
+  helperText?: string;
   placeholder: string;
   value?: string;
   change?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -24,14 +24,14 @@ export default function InputField({
   areachange,
 }: Props) {
   return (
-    <Field label={label} required helperText={helperText} mt={2}>
+    <>
       {!big ? (
         <Input
           placeholder={placeholder}
           onChange={change}
           value={value}
           variant="subtle"
-          name={name}
+          mt={2}
         />
       ) : (
         <Textarea
@@ -39,9 +39,8 @@ export default function InputField({
           variant="subtle"
           onChange={areachange}
           value={value}
-          name={name}
         />
       )}
-    </Field>
+    </>
   );
 }

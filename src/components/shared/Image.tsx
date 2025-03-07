@@ -1,12 +1,13 @@
 "use client";
 
-import { IProducts } from "@/Interfaces/Product";
-
 import Image from "next/image";
 import { FC, useState } from "react";
 
 interface Props {
-  product: IProducts;
+  product: {
+    title: string;
+    image: string;
+  };
   fill?: boolean;
   width?: string;
   height?: string;
@@ -39,7 +40,7 @@ const CustomImage: FC<Props> = ({ product, fill, width, height }) => {
           height={1000}
           onLoad={() => setIsloading(false)}
           style={{
-            width: '100%',
+            width: "100%",
             objectFit: "cover",
             height: "200px",
             borderTopLeftRadius: "6px",

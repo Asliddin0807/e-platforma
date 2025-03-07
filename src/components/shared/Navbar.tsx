@@ -30,7 +30,7 @@ export default function Navbar() {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [profile]);
 
   return (
     <Box w={"full"} p={1} h={"90px"} position={"sticky"} top={0} zIndex={10}>
@@ -39,7 +39,6 @@ export default function Navbar() {
         top={0}
         left={0}
         right={0}
-        // boxShadow={"lg"}
         p={4}
         zIndex={1000}
         style={{ backdropFilter: "blur(10px) brightness(100%)" }}

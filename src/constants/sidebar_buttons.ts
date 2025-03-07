@@ -23,6 +23,12 @@ export const navButtons = [
     pathname: "/blogs",
     icon: "BiHash",
   },
+  {
+    id: 5,
+    name: "Test va amaliyot",
+    pathname: "/practice",
+    icon: "BiHash",
+  },
 ];
 
 export const adminNavButtons = [
@@ -48,6 +54,12 @@ export const adminNavButtons = [
     id: 4,
     name: "Testlar",
     pathname: "/blogs",
+    icon: "BiHash",
+  },
+  {
+    id: 5,
+    name: "Loyhalar",
+    pathname: "dashboard_projects",
     icon: "BiHash",
   },
 ];
