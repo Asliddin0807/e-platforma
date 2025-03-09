@@ -12,7 +12,7 @@ interface Props {
 }
 
 const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     {
       axis: "y",
       align: "start",

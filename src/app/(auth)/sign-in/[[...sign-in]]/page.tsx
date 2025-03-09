@@ -4,6 +4,7 @@ import { SignIn } from "@clerk/nextjs";
 import { useColorMode } from "@/components/ui/color-mode";
 import { dark, neobrutalism } from "@clerk/themes";
 import { Box } from "@chakra-ui/react";
+
 export default function SingUp() {
   const { colorMode } = useColorMode();
 

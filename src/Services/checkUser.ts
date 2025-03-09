@@ -25,13 +25,6 @@ interface IGetMyCourse {
   data?: IProducts[];
 }
 
-interface Video {
-  id: string;
-  title: string;
-  link: string;
-  isComplete: string;
-}
-
 export const CheckUser = {
   async user(user: UserResource | null): Promise<IAuth | null> {
     if (!user) return null;
@@ -76,11 +69,8 @@ export const CheckUser = {
     return { data: nullData, status: "400" };
   },
 
-  async addMyCourse(
-    slug: string,
-    userId: string | null | undefined
-  ): Promise<IGetMyCourse> {
-    if (!userId) {
+  async addMyCourse(slug: string, userId: string): Promise<IGetMyCourse> {
+    if (!userId || null) {
       return {
         status: "400",
         message:
@@ -88,62 +78,58 @@ export const CheckUser = {
       };
     }
 
-    try {
-      // Поиск курса по slug
-      const courseRef = collection(db, "courses");
-      const q = query(courseRef, where("slug", "==", slug));
-      const courseSnap = await getDocs(q);
+    // Поиск курса по slug
+    const courseRef = collection(db, "courses");
+    const q = query(courseRef, where("slug", "==", slug));
+    const courseSnap = await getDocs(q);
 
-      if (courseSnap.empty) {
-        return { status: "400", message: "Course not found!" };
-      }
-
-      // Получаем данные курса
-      const docData = courseSnap.docs[0].data();
-      const course: IProducts = {
-        title: docData.title || "",
-        category: docData.category || "",
-        comments: docData.comments || [],
-        description: docData.description || "",
-        for_whom: docData.for_whom || "",
-        image: docData.image || "",
-        project: docData.project || [],
-        rate: docData.rate || { rates: 0, viewers: 0 },
-        slug: docData.slug || "",
-        video_course: docData.video_course || [],
-      };
-
-      // Получаем пользователя
-      const userRef = doc(db, "users", userId);
-      const userSnap = await getDoc(userRef);
-
-      if (!userSnap.exists()) {
-        return { status: "400", message: "User not found!" };
-      }
-
-      const userData = userSnap.data();
-
-      // Check if the course is already in user's `myCourses` array
-      const isCourseAlreadyAdded = userData.myCourses?.some(
-        (existingCourse: IProducts) => existingCourse.slug === course.slug
-      );
-
-      if (isCourseAlreadyAdded) {
-        return {
-          status: "200",
-          message: "Davom etish mumkun!",
-        };
-      }
-
-      // Добавляем курс в `myCourses`
-      await updateDoc(userRef, {
-        myCourses: arrayUnion(course),
-      });
-
-      return { message: "Kursga muvaffaqiyatli yozildingiz!", status: "200" };
-    } catch (error) {
-      return { status: "500", message: "Internal Server Error" };
+    if (courseSnap.empty) {
+      return { status: "400", message: "Course not found!" };
     }
+
+    // Получаем данные курса
+    const docData = courseSnap.docs[0].data();
+    const course: IProducts = {
+      title: docData.title || "",
+      category: docData.category || "",
+      comments: docData.comments || [],
+      description: docData.description || "",
+      for_whom: docData.for_whom || "",
+      image: docData.image || "",
+      project: docData.project || [],
+      rate: docData.rate || { rates: 0, viewers: 0 },
+      slug: docData.slug || "",
+      video_course: docData.video_course || [],
+    };
+
+    // Получаем пользователя
+    const userRef = doc(db, "users", userId);
+    const userSnap = await getDoc(userRef);
+
+    if (!userSnap.exists()) {
+      return { status: "400", message: "User not found!" };
+    }
+
+    const userData = userSnap.data();
+
+    // Check if the course is already in user's `myCourses` array
+    const isCourseAlreadyAdded = userData.myCourses?.some(
+      (existingCourse: IProducts) => existingCourse.slug === course.slug
+    );
+
+    if (isCourseAlreadyAdded) {
+      return {
+        status: "200",
+        message: "Davom etish mumkun!",
+      };
+    }
+
+    // Добавляем курс в `myCourses`
+    await updateDoc(userRef, {
+      myCourses: arrayUnion(course),
+    });
+
+    return { message: "Kursga muvaffaqiyatli yozildingiz!", status: "200" };
   },
 
   async getMyCourseItem(
@@ -172,7 +158,6 @@ export const CheckUser = {
 
       return { message: "Success", status: "200", data: course };
     } catch (error) {
-      console.error("Error fetching course:", error);
       return { message: "Internal Server Error", status: "500" };
     }
   },

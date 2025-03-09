@@ -6,7 +6,6 @@ import {
   deleteDoc,
   doc,
   DocumentData,
-  getDoc,
   getDocs,
   Query,
   query,
@@ -32,12 +31,8 @@ interface IDelete {
 
 export const CourseService = {
   async createCourse(data: IProducts) {
-    try {
-      const docRef = await addDoc(collection(db, "courses"), data);
-      return { message: "Success!", status: "200" };
-    } catch (err) {
-      return { status: "400", message: "Error!" };
-    }
+    await addDoc(collection(db, "courses"), data);
+    return { message: "Success!", status: "200" };
   },
 
   async getCourses(): Promise<IGetCoursesResponse> {
@@ -63,27 +58,23 @@ export const CourseService = {
   },
 
   async deleteCourse(slug: string): Promise<IDelete> {
-    try {
-      const q: Query<DocumentData, DocumentData> = query(
-        collection(db, "courses"),
-        where("slug", "==", slug)
-      );
+    const q: Query<DocumentData, DocumentData> = query(
+      collection(db, "courses"),
+      where("slug", "==", slug)
+    );
 
-      const querySnapshot = await getDocs(q);
+    const querySnapshot = await getDocs(q);
 
-      if (querySnapshot.empty) {
-        return { status: "404", message: "Not found" };
-      }
-
-      // Удаляем все найденные документы с таким slug
-      for (const document of querySnapshot.docs) {
-        await deleteDoc(doc(db, "courses", document.id));
-      }
-
-      return { message: "Success delete", status: "200" };
-    } catch (error) {
-      return { message: "Error delete", status: "400" };
+    if (querySnapshot.empty) {
+      return { status: "404", message: "Not found" };
     }
+
+    // Удаляем все найденные документы с таким slug
+    for (const document of querySnapshot.docs) {
+      await deleteDoc(doc(db, "courses", document.id));
+    }
+
+    return { message: "Success delete", status: "200" };
   },
 
   async getCourse(id: string): Promise<IGetCourse> {

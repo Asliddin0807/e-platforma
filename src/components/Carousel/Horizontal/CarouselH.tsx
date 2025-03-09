@@ -19,7 +19,7 @@ interface Props {
 }
 
 const CarouselH = ({ slides, options }: Props) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay()]);
 
   return (
     <section className="emblas">

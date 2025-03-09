@@ -20,7 +20,7 @@ interface IGetProject {
 
 export const ProjectService = {
   async createProject(data: IProject): Promise<IGetProject> {
-    const docRef = await addDoc(collection(db, "projects"), data);
+    await addDoc(collection(db, "projects"), data);
     return { message: "Success!", status: "200" };
   },
 

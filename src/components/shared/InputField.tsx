@@ -1,5 +1,5 @@
 import { Input, Textarea } from "@chakra-ui/react";
-import { Field } from "../ui/field";
+
 import React from "react";
 
 interface Props {
@@ -14,13 +14,12 @@ interface Props {
 }
 
 export default function InputField({
-  label,
   change,
-  helperText,
+
   placeholder,
   value,
   big,
-  name,
+
   areachange,
 }: Props) {
   return (
@@ -35,6 +34,7 @@ export default function InputField({
         />
       ) : (
         <Textarea
+          mt={2}
           placeholder={placeholder}
           variant="subtle"
           onChange={areachange}

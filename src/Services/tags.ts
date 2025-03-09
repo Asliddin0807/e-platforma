@@ -3,8 +3,8 @@ import { doc, getDoc } from "firebase/firestore";
 
 export const TagService = {
   async getTegs() {
-    let findDoc = doc(db, "tags", "ZJs5fcdBTC2FL3y6lnno");
-    let docSnap = await getDoc(findDoc);
+    const findDoc = doc(db, "tags", "ZJs5fcdBTC2FL3y6lnno");
+    const docSnap = await getDoc(findDoc);
     return { data: docSnap.data(), message: "Success!" };
   },
 };

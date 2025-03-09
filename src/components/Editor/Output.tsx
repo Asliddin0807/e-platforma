@@ -1,5 +1,4 @@
-"use client";
-import { Box, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
@@ -7,8 +6,6 @@ interface Props {
 }
 
 export default function Output({ output }: Props) {
-  const isMobile = useBreakpointValue({ base: true, md: false });
-
   return (
     <Box
       w={{ base: "100%", md: "50%" }}

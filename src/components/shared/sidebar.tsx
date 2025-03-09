@@ -1,7 +1,6 @@
 "use client";
 import { Box, Text } from "@chakra-ui/react";
 import Icons from "../Icons/Icons";
-import { navButtons } from "@/constants/sidebar_buttons";
 import { useRouter } from "nextjs-toploader/app";
 import { usePathname } from "next/navigation";
 import { ISide } from "@/Interfaces/sidebar";
@@ -29,17 +28,20 @@ export default function Sidebar({ data }: iGetSide) {
             key={idx}
             display={"flex"}
             gap={2}
-            p={2}
-            mt={1}
+            p={3}
+            mt={2}
             w={"100%"}
             userSelect={"none"}
+            borderRadius={'md'}
             _hover={{ bg: "gray.800", _light: { bg: "gray.400" } }}
             cursor={"pointer"}
             onClick={() => router.push(item.pathname)}
-            bg={item.pathname == pathname ? "gray.700" : ""}
+            bg={item.pathname == pathname ? "gray.800" : "gray.700"}
+          
+
             color={"white"}
             _light={{
-              bg: item.pathname == pathname ? "gray.500" : "",
+              bg: item.pathname == pathname ? "gray.600" : "gray.400",
               color: "black",
             }}
           >

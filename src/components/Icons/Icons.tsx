@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Iconses from "react-icons/bi"; // Импортируем все иконки как объект
 import { useColorMode } from "@/components/ui/color-mode";
 
@@ -25,7 +25,7 @@ const Icons: React.FC<IconsProps> = ({
     return null;
   }
 
-  let obj = { color: prioritet ? color : colorMode, fontSize: size };
+  const obj = { color: prioritet ? color : colorMode, fontSize: size };
 
   return <IconComponent style={obj} {...props} />;
 };

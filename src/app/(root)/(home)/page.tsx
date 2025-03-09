@@ -1,9 +1,9 @@
-
-import { HeroComponent } from "@/components/Hero/Hero";
+import { HeroComponent } from "@/components/shared/Hero";
 import MyCourses from "@/components/shared/my_courses";
-import { Flex, Container, Text, Box, Grid } from "@chakra-ui/react";
 
-export default function Home() {
+import { Container } from "@chakra-ui/react";
+
+export default async function Home() {
   return (
     <Container
       display={"flex"}

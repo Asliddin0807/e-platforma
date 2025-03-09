@@ -21,14 +21,14 @@ const CustomImage: FC<Props> = ({ product, fill, width, height }) => {
         <Image
           src={product.image}
           alt={product.title}
-          className="image"
           onLoad={() => setIsloading(false)}
-          width={150}
-          height={250}
+          width={400}
+          height={1000}
+          
           style={{
-            width: width,
+            width: '100%',
             height: height,
-            objectFit: "fill",
+            objectFit: 'cover',
             borderRadius: "20px",
           }}
         />

@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Button } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import InputField from "@/components/shared/InputField";
 
 interface Course {
@@ -51,7 +51,7 @@ export default function CourseItems({ courses, setCourses }: Props) {
             helperText="Kurs darsligi uchun nom!"
             big={false}
             value={course.title}
-            change={(e: any) =>
+            change={(e: React.ChangeEvent<HTMLInputElement>) =>
               updateCourse(course.id, "title", e.target.value)
             }
             name={"name"}
@@ -62,7 +62,7 @@ export default function CourseItems({ courses, setCourses }: Props) {
             placeholder="https://vimeo.com/8847677"
             big={false}
             value={course.link}
-            change={(e: any) => updateCourse(course.id, "link", e.target.value)}
+            change={(e: React.ChangeEvent<HTMLInputElement>) => updateCourse(course.id, "link", e.target.value)}
             name={"name"}
           />
         </Box>

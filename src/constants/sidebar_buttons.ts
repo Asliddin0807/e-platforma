@@ -51,9 +51,15 @@ export const adminNavButtons = [
     icon: "BiCodeAlt",
   },
   {
+    id: 10,
+    name: "Blog qo'shish",
+    pathname: "/blog",
+    icon: "BiCodeAlt",
+  },
+  {
     id: 4,
-    name: "Testlar",
-    pathname: "/blogs",
+    name: "Bloglarni o'chirish",
+    pathname: "/blog_delete",
     icon: "BiHash",
   },
   {

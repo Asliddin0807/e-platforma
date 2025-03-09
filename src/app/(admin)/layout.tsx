@@ -1,7 +1,7 @@
-import Navbar from "@/components/shared/Navbar";
+
 import Sidebar from "@/components/shared/sidebar";
 import { adminNavButtons } from "@/constants/sidebar_buttons";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
 export default function AdminLayout({

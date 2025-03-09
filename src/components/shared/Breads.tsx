@@ -1,5 +1,5 @@
 "use client";
-import { IProducts } from "@/Interfaces/Product";
+
 import { HStack, Breadcrumb } from "@chakra-ui/react";
 import { useRouter } from "nextjs-toploader/app";
 

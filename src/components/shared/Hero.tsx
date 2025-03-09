@@ -1,31 +1,26 @@
 "use client";
 import { Flex, Box, Text, Grid, useBreakpointValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+
 import VerticalCarousel from "../Carousel/Carousel";
-import { CodeBlocks } from "../shared/Animation_Text";
+import { CodeBlocks } from "./Animation_Text";
 import Icons from "../Icons/Icons";
 import { iconData } from "../Local_data/datas";
 
 import Marquee from "react-fast-marquee";
 import { dataCarousel } from "@/constants/carousel_data";
-import { IProducts } from "@/Interfaces/Product";
-import CourseService from "@/Services/courses";
-
 
 export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
   const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1000px" });
 
-  const [data, setData] = useState<IProducts[]>([]);
+  // const [data, setData] = useState<IProducts[]>([]);
 
-  const getData = async () => {
-    const { data } = await CourseService.getCourses();
-    setData(data);
-  };
+  // const getData = async () => {
+  //   const { data } = await CourseService.getCourses();
+  //   setData(data);
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // getData();
 
   return (
     <Box
@@ -43,7 +38,7 @@ export const HeroComponent = () => {
         bg={"gray.200"}
         _dark={{ bg: "yellow.600" }}
         w={{ base: "100%", md: "full" }}
-        gap={15}
+        gap={20}
         borderRadius={"md"}
         boxShadow={"md"}
         alignItems={"center"}
@@ -67,7 +62,7 @@ export const HeroComponent = () => {
             erda siz barcha pullik kurslarni bepul o'rganishingiz mumkin.
           </Text>
         </Box>
-        <Box ml={10}>
+        <Box>
           <VerticalCarousel dataCarousel={dataCarousel} />
         </Box>
       </Grid>

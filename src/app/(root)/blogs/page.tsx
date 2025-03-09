@@ -1,13 +1,28 @@
-import { blogs } from "@/components/Local_data/datas";
+import Header from "@/components/shared/HeaderText";
 import CustomImage from "@/components/shared/Image";
-import { Box, Grid, Text } from "@chakra-ui/react";
+import { IBlogs } from "@/Interfaces/blog";
+import { db } from "@/lib/firebase/firebase";
+import { Box, Button, Grid, Text } from "@chakra-ui/react";
+import { collection, getDocs } from "firebase/firestore";
+import Link from "next/link";
 
-export default function BlogPage() {
+const getBlogs = async () => {
+  const blogs = await getDocs(collection(db, "blog"));
+  const data: IBlogs[] = blogs.docs.map((doc) => ({
+    id: doc.data().id,
+    ...doc.data(),
+  })) as IBlogs[];
+
+  return { data: data };
+};
+
+export default async function BlogPage() {
+  const { data } = await getBlogs();
+  console.log(data)
   return (
-    <Box p={2} m={4}>
-      <Text fontSize={"40px"} fontWeight={"bold"}>
-        Bloglar
-      </Text>
+    <Box p={4}>
+      <Header text={"Bloglar"} />
+      {/* <CourseBread title_one=""/> */}
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
@@ -16,7 +31,7 @@ export default function BlogPage() {
         }}
         gap={6}
       >
-        {blogs.map((item, idx) => (
+        {data.map((item, idx) => (
           <Box
             w={"100%"}
             key={idx}
@@ -31,6 +46,9 @@ export default function BlogPage() {
             <Box w={{ base: "100%", md: "50%", xl: "100%" }}>
               <Text fontSize={"20px"}>{item.title}</Text>
               <Text color={"grey"}>{item.description.slice(0, 80)}...</Text>
+              <Link href={`/blog/${item.id}`}>
+                <Button mt={5}>Ko'proq</Button>
+              </Link>
             </Box>
           </Box>
         ))}

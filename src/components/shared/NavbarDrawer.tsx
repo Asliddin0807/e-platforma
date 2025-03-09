@@ -10,7 +10,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import Icons from "../Icons/Icons";
 import Link from "next/link";
 import { navButtons } from "@/constants/sidebar_buttons";
@@ -22,17 +22,16 @@ export default function NavbarDrawer() {
   const [dashboard, setDashboard] = useState<boolean>(false);
   const { userId } = useAuth();
 
-  const checkUser = async () => {
+  // const checkUser = async () => {
+  //   const { data } = await CheckUser.getUser(userId);
+  //   if (data.status === "admin") {
+  //     setDashboard(true);
+  //   }
+  // };
 
-    const { data } = await CheckUser.getUser(userId);
-    if (data.status === "admin") {
-      setDashboard(true);
-    }
-  };
-
-  useEffect(() => {
-    checkUser();
-  }, []);
+  // useEffect(() => {
+  //   checkUser();
+  // }, [checkUser]);
   return (
     <Box>
       <DrawerRoot placement={"start"}>
@@ -56,7 +55,9 @@ export default function NavbarDrawer() {
             ))}
             {dashboard && (
               <Link href={"/dashboard"}>
-                <Button w={'100%'} mt={2} size={'xs'}>Admin</Button>
+                <Button w={"100%"} mt={2} size={"xs"}>
+                  Admin
+                </Button>
               </Link>
             )}
           </DrawerBody>

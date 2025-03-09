@@ -22,6 +22,7 @@ export default function DetailButton({ course }: Props) {
 
   const courseView = async () => {
     setLoading(true);
+
     if (userId) {
       const { message, status } = await CheckUser.addMyCourse(
         course.slug,
@@ -42,11 +43,13 @@ export default function DetailButton({ course }: Props) {
         setLoading(false);
       }
     } else {
-      toaster.error({
-        title: "Iltimos login yoki avtorizatsiyadan o'ting",
-      });
       setLoading(false);
+      toaster.error({
+        title: 'Iltimos profilga kiring!',
+      })
     }
+
+    console.log("appp");
   };
 
   return (

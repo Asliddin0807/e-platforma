@@ -1,9 +1,8 @@
 "use client";
-
 import { CourseBread } from "@/components/shared/Breads";
 import dynamic from "next/dynamic";
 import Icons from "@/components/Icons/Icons";
-import { course_data } from "@/components/Local_data/datas";
+
 import Video from "@/components/shared/Video";
 import { IProducts } from "@/Interfaces/Product";
 import {
@@ -17,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "next/navigation";
 import { useRouter } from "nextjs-toploader/app";
-import CourseService from "@/Services/courses";
 import { useEffect, useState } from "react";
 import { CheckUser } from "@/Services/checkUser";
 import { useAuth } from "@clerk/nextjs";

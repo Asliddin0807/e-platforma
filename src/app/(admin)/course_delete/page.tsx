@@ -98,6 +98,7 @@ export default function DeleteCoursePage() {
             </Box>
             <Box mr={{ base: "0px", md: "100px" }} w={"100%"}>
               <Button
+                loading={loading}
                 w={{ base: "100%", md: "auto" }}
                 onClick={() => deleteHandler(item.slug)}
               >

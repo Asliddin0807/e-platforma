@@ -14,22 +14,14 @@ import { ITag } from "@/Interfaces/tag";
 import { db } from "@/lib/firebase/firebase";
 import CourseService from "@/Services/courses";
 
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Flex,
-  Input,
-  Tag,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Flex, Tag, Text } from "@chakra-ui/react";
 import {
   doc,
   DocumentData,
   DocumentSnapshot,
   getDoc,
 } from "firebase/firestore";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function AddCourse() {
   const [title, setTitle] = useState<string>("");
@@ -56,21 +48,17 @@ export default function AddCourse() {
   };
 
   async function getTegs(): Promise<ITag | null> {
-    try {
-      const findDoc = doc(db, "tags", "ZJs5fcdBTC2FL3y6lnno");
-      const docSnap: DocumentSnapshot<DocumentData> = await getDoc(findDoc);
+    const findDoc = doc(db, "tags", "ZJs5fcdBTC2FL3y6lnno");
+    const docSnap: DocumentSnapshot<DocumentData> = await getDoc(findDoc);
 
-      if (!docSnap.exists()) {
-        return null;
-      }
-
-      const data = docSnap.data() as ITag; // Данные в виде объекта
-      setTgs(data); // Передаём объект, а не массив
-
-      return data;
-    } catch (error) {
+    if (!docSnap.exists()) {
       return null;
     }
+
+    const data = docSnap.data() as ITag; // Данные в виде объекта
+    setTgs(data); // Передаём объект, а не массив
+
+    return data;
   }
 
   const sendForm = async () => {

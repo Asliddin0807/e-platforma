@@ -1,6 +1,5 @@
 import axios from "axios";
 import { LANGUAGE } from "@/constants/editor_constants";
-import { editor } from "monaco-editor";
 
 const API = axios.create({
   baseURL: "https://emkc.org/api/v2/piston",

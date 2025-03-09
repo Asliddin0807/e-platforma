@@ -1,7 +1,5 @@
 "use client";
 import { Box } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 import Vimeo from "@u-wave/react-vimeo";
 
 export default function Video() {

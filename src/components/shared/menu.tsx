@@ -5,7 +5,7 @@ import {
   MenuItem,
   MenuRoot,
   MenuTrigger,
-  MenuTriggerItem,
+
 } from "@/components/ui/menu";
 
 interface Props {

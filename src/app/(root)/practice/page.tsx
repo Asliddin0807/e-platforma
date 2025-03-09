@@ -1,7 +1,5 @@
-import { Text } from "@chakra-ui/react";
+import QuizComponent from "@/components/shared/quiz-items";
 
-export default function BlogPage(){
-    return (
-        <Text>Test va amaliyot</Text>
-    )
+export default function QuizPage() {
+  return <QuizComponent />;
 }
