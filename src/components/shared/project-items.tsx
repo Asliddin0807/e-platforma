@@ -54,6 +54,7 @@ const ProjectComponent = ({ isAdmin }: Props) => {
           borderRadius={"md"}
           boxShadow={"xl"}
           p={2}
+          onClick={() => window.open(item.git_link, "_blank")}
         >
           <CustomImage product={item} />
           <Box

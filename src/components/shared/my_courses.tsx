@@ -31,7 +31,7 @@ const MyCourses = () => {
 
   useEffect(() => {
     apiHandler();
-  }, []);
+  }, [userId]);
 
   return (
     <Box w={"100%"} mt={5}>

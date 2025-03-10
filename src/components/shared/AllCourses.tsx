@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/menu";
 import CourseCard from "@/components/shared/CourseCard";
 import CourseService from "@/Services/courses";
-import Empty from "./Empty";
+
+
 
 export default function ButtonsCategory() {
   const [allData, setAllData] = useState<IProducts[]>([]);
@@ -95,14 +96,9 @@ export default function ButtonsCategory() {
           xl: "repeat(3, 1fr)",
         }}
       >
-        {!filteredData.length ? (
-          <Empty
-            title={"Kurslar mavjud emas!"}
-            desc={"Kurslar tez orada qo'shiladi platformada qoling."}
-          />
-        ) : (
-          filteredData.map((item, idx) => <CourseCard item={item} key={idx} />)
-        )}
+        {filteredData.map((item, idx) => (
+          <CourseCard item={item} key={idx} />
+        ))}
       </Grid>
     </>
   );

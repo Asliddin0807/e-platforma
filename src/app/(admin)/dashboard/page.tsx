@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, HStack, Text } from "@chakra-ui/react";
 import DashboardChart from "@/components/shared/Bar";
 import { admin_data } from "@/constants/admin_data";
 import Icons from "@/components/Icons/Icons";
@@ -42,48 +42,23 @@ export default async function Dashboard() {
       </Flex>
       <DashboardChart />
       <Box mt={10}>
-        <HStack justifyContent={"space-between"} mx={"15px"}>
+        <HStack justifyContent={"space-between"}>
           <Text fontSize={"35px"} fontWeight={"bold"}>
             Kurslar
           </Text>
-          <Box display={"flex"} alignItems={"center"} gap={2}>
-            <Link
-              href={"/course_add"}
-              style={{
-                fontSize: "15px",
-                backgroundColor: "green",
-                padding: "4px",
-                borderRadius: "5px",
-              }}
-            >
-              Kurs qo'shish
-            </Link>
-            <Link
-              href={"/course_delete"}
-              style={{
-                fontSize: "15px",
-                backgroundColor: "red",
-                padding: "4px",
-                borderRadius: "5px",
-              }}
-            >
-              Kursni o'chirish
-            </Link>
-          </Box>
         </HStack>
-        <Flex
-          gap={2}
-          mt={2}
-          justifyContent={"space-evenly"}
-          flexWrap={"wrap"}
-          flexShrink={1}
-          w={"full"}
-          flexDirection={{ base: "column", md: "row", xl: "row" }}
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            xl: "repeat(3, 1fr)",
+          }}
+          gap={6}
         >
           {data.map((item, idx) => (
             <CourseCard key={idx} item={item} />
           ))}
-        </Flex>
+        </Grid>
       </Box>
     </Box>
   );

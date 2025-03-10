@@ -6,5 +6,5 @@ export interface IAuth {
   password: string;
   username: string;
   myCourses: IProducts[];
-  status: "user" | "admin";
+  status: string;
 }

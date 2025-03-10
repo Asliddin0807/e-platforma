@@ -5,15 +5,27 @@ import NextTopLoader from "nextjs-toploader";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
-  // title: "IT Code",
   description: "Online kurslar markazi!",
   title: {
     default: "IT Code",
-    template: "%s | Dev Blook - A blog for developers",
+    template: "%s | Xammasi IT xaqida",
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
+  },
+  keywords: ["IT Code", "Programming languages", "JavaScript", "coding"],
+  openGraph: {
+    title: "IT Code",
+    description: "IT Code e-platforma learn programming languages.",
+    type: "website",
+    url: process.env.URL,
+    locale: "uz_UZ",
+    images:
+      "https://media.licdn.com/dms/image/D5612AQElK9H-73lrmA/article-cover_image-shrink_720_1280/0/1700054275565?e=2147483647&v=beta&t=NTE64ZTiVSxKWa49LF5RgpFyqqfdXNH2rivLZSIpdRU",
+    countryName: "Uzbekistan",
+    siteName: "IT Code",
+    emails: "komandirnuriddinov2@gmail.com",
   },
 };
 

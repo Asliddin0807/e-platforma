@@ -1,5 +1,5 @@
 "use client";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, useDisclosure } from "@chakra-ui/react";
 import Icons from "../Icons/Icons";
 import { useRouter } from "nextjs-toploader/app";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,10 @@ interface iGetSide {
 export default function Sidebar({ data }: iGetSide) {
   const router = useRouter();
   const pathname = usePathname();
+
+  const sideHandler = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <Box
@@ -32,13 +36,15 @@ export default function Sidebar({ data }: iGetSide) {
             mt={2}
             w={"100%"}
             userSelect={"none"}
-            borderRadius={'md'}
-            _hover={{ bg: "gray.800", _light: { bg: "gray.400" } }}
+            borderRadius={"md"}
+            _hover={{
+              bg: "cyan.400",
+              color: "white",
+              _light: { bg: "gray.400" },
+            }}
             cursor={"pointer"}
-            onClick={() => router.push(item.pathname)}
-            bg={item.pathname == pathname ? "gray.800" : "gray.700"}
-          
-
+            onClick={() => sideHandler(item.pathname)}
+            bg={item.pathname == pathname ? "cyan.500" : ""}
             color={"white"}
             _light={{
               bg: item.pathname == pathname ? "gray.600" : "gray.400",

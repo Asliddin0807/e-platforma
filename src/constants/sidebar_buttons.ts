@@ -19,7 +19,7 @@ export const navButtons = [
   },
   {
     id: 4,
-    name: "Blog",
+    name: "Bloglar",
     pathname: "/blogs",
     icon: "BiHash",
   },
@@ -27,7 +27,7 @@ export const navButtons = [
     id: 5,
     name: "Test va amaliyot",
     pathname: "/practice",
-    icon: "BiHash",
+    icon: "BiTestTube",
   },
 ];
 
@@ -36,6 +36,12 @@ export const adminNavButtons = [
     id: 1,
     name: "Bosh sahifa",
     pathname: "/dashboard",
+    icon: "BiHome",
+  },
+  {
+    id: 54,
+    name: "Foydlanuvchilar",
+    pathname: "/user/control",
     icon: "BiHome",
   },
   {

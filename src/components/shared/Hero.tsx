@@ -13,14 +13,6 @@ export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
   const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1000px" });
 
-  // const [data, setData] = useState<IProducts[]>([]);
-
-  // const getData = async () => {
-  //   const { data } = await CourseService.getCourses();
-  //   setData(data);
-  // };
-
-  // getData();
 
   return (
     <Box

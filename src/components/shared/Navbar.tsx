@@ -23,14 +23,23 @@ export default function Navbar() {
   const { userId } = useAuth();
   const { colorMode } = useColorMode();
   const [profile, setProfile] = useState<IAuth | null>(null);
-  // const getUser = async () => {
-  //   const { data } = await CheckUser.getUser(userId);
-  //   setProfile(data);
-  // };
+  const [mounted, setMounted] = useState(false);
 
-  // useEffect(() => {
-  //   getUser();
-  // }, [getUser]);
+  const getUser = async () => {
+    const { data } = await CheckUser.getUser(userId);
+    setProfile(data);
+  };
+
+  useEffect(() => {
+    getUser();
+  }, [userId]);
+
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // Избегаем рендера на сервере
 
   return (
     <Box w={"full"} p={1} h={"90px"} position={"sticky"} top={0} zIndex={10}>

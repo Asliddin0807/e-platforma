@@ -5,6 +5,7 @@ import { db } from "@/lib/firebase/firebase";
 import { Box, Button, Grid, Text } from "@chakra-ui/react";
 import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const getBlogs = async () => {
   const blogs = await getDocs(collection(db, "blog"));
@@ -18,7 +19,7 @@ const getBlogs = async () => {
 
 export default async function BlogPage() {
   const { data } = await getBlogs();
-  console.log(data)
+
   return (
     <Box p={4}>
       <Header text={"Bloglar"} />

@@ -528,3 +528,32 @@ export const quiz = {
     },
   ],
 };
+
+export const test = [
+  {
+    id: 1,
+    title: "JavaScript junior",
+    image: "https://wpengine.com/wp-content/uploads/2021/07/jsheader.png",
+    question: "What is the capital of France?",
+    answers: ["Madrid", "Paris", "Rome", "Berlin"],
+    correctAnswer: "Paris",
+  },
+  {
+    id: 1,
+    title: "ReactJs junior",
+    image:
+      "https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png",
+    question: "What is the capital of France?",
+    answers: ["Madrid", "Paris", "Rome", "Berlin"],
+    correctAnswer: "Paris",
+  },
+  {
+    id: 3,
+    title: "ReactJs junior",
+    image:
+      "https://miro.medium.com/v2/resize:fit:1200/1*y6C4nSvy2Woe0m7bWEn4BA.png",
+    question: "What is the capital of France?",
+    answers: ["Madrid", "Paris", "Rome", "Berlin"],
+    correctAnswer: "Paris",
+  },
+];

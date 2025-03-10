@@ -63,8 +63,8 @@ export default function DetailButton({ course }: Props) {
       borderRadius={"md"}
       boxShadow={"md"}
       p={2}
-      position={{ base: "fixed", md: "fixed", xl: "sticky" }}
-      top={{ base: "", md: "", xl: 10 }}
+      position={{ base: "fixed", md: "fixed", xl: "relative" }}
+      top={{ base: "", md: "", xl: 2 }}
       bottom={{ base: 0, md: 0, xl: "" }}
       left={{ base: 0, md: 0, xl: "" }}
       right={{ base: 0, md: 0, xl: "" }}
@@ -88,10 +88,6 @@ export default function DetailButton({ course }: Props) {
             Kursga kirish
           </Text>
           <StarRating rating={course.rate.rates} size={isMobile ? 18 : 25} />
-        </Flex>
-        <Flex alignItems={"center"} mt={2} gap={2}>
-          <FiEye fontSize={"20px"} />
-          <Text fontSize={"18px"}>{course.rate.viewers} ko'rilgan</Text>
         </Flex>
       </Box>
       <Button
