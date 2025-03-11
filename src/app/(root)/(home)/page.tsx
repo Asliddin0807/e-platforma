@@ -33,7 +33,17 @@ export default async function Home() {
       <>
         <Header text={"Kurslar"} />
         {data.map((item, idx) => (
-          <CourseCard item={item} key={idx} />
+          <Grid
+            templateColumns={{
+              base: "repeat(1, 1fr)",
+              md: "repeat(2, 1fr)",
+              xl: "repeat(3, 1fr)",
+            }}
+            gap={6}
+            w={"100%"}
+          >
+            <CourseCard item={item} key={idx} />
+          </Grid>
         ))}
       </>
       <Box mt={4}>

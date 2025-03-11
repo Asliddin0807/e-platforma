@@ -89,7 +89,7 @@ const Page = () => {
         gap={2}
       >
         <Box w={{ base: "100%", xl: "70%" }}>
-          <Video />
+          <Video video={id_video?.link} />
           <Text fontSize="22px" mt={2}>
             {id_video?.title}
           </Text>
