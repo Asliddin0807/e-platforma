@@ -17,8 +17,13 @@ import { navButtons } from "@/constants/sidebar_buttons";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { CheckUser } from "@/Services/checkUser";
+import { ISide } from "@/Interfaces/sidebar";
 
-export default function NavbarDrawer() {
+interface Props {
+  data: ISide[];
+}
+
+export default function NavbarDrawer({ data }: Props) {
   const [dashboard, setDashboard] = useState<boolean>(false);
   const { userId } = useAuth();
   const { onClose } = useDisclosure();
@@ -48,7 +53,7 @@ export default function NavbarDrawer() {
             <DrawerTitle>Sahifalar</DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
-            {navButtons.map((item, idx) => (
+            {data.map((item, idx) => (
               <Link href={item.pathname} key={idx}>
                 <Button
                   mt={2}

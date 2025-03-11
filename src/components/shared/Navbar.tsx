@@ -16,8 +16,14 @@ import { dark, neobrutalism } from "@clerk/themes";
 import { useEffect, useState } from "react";
 import { CheckUser } from "@/Services/checkUser";
 import { IAuth } from "@/Interfaces/auth";
+import { navButtons } from "@/constants/sidebar_buttons";
+import { ISide } from "@/Interfaces/sidebar";
 
-export default function Navbar() {
+interface Props {
+  data: ISide[];
+}
+
+export default function Navbar({ data }: Props) {
   const router = useRouter();
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { userId } = useAuth();
@@ -33,7 +39,6 @@ export default function Navbar() {
   useEffect(() => {
     getUser();
   }, [userId]);
-
 
   useEffect(() => {
     setMounted(true);
@@ -59,7 +64,7 @@ export default function Navbar() {
       >
         <HStack alignItems={"center"} justifyContent={"space-between"}>
           <Box display={"flex"} gap={2} alignItems={"center"}>
-            {isMobile && <NavbarDrawer />}
+            {isMobile && <NavbarDrawer data={data} />}
             <Image
               src={"/image.png"}
               width={50}

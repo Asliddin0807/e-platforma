@@ -10,7 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <Box>
-      <Navbar />
+      <Navbar data={navButtons}/>
       <Box display={"flex"} h={"full"} w={"100%"}>
         <Box w={"20%"} display={{ base: "none", md: "none", xl: "block" }} >
           <Sidebar data={navButtons}/>

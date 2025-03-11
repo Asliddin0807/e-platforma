@@ -11,7 +11,7 @@ export default function AdminLayout({
 }>) {
   return (
     <Box>
-      <Navbar />
+      <Navbar data={adminNavButtons} />
       <Box display={"flex"} gap={2}>
         <Box w={"20%"} display={{ base: "none", md: "none", xl: "block" }}>
           <Sidebar data={adminNavButtons} />
