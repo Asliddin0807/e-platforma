@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     template: "%s | Xammasi IT xaqida",
   },
   icons: {
-    icon: "/image.png",
-    apple: "/image.png",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   keywords: ["IT Code", "Programming languages", "JavaScript", "coding"],
   openGraph: {
@@ -48,6 +48,15 @@ export default function RootLayout({
   };
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <ClerkProvider localization={localization}>
         <body>
           <Provider>
