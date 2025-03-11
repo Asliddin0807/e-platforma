@@ -32,19 +32,19 @@ export default async function Home() {
       <HeroComponent />
       <>
         <Header text={"Kurslar"} />
-        {data.map((item, idx) => (
-          <Grid
-            templateColumns={{
-              base: "repeat(1, 1fr)",
-              md: "repeat(2, 1fr)",
-              xl: "repeat(3, 1fr)",
-            }}
-            gap={6}
-            w={"100%"}
-          >
+        <Grid
+          templateColumns={{
+            base: "repeat(1, 1fr)",
+            md: "repeat(2, 1fr)",
+            xl: "repeat(3, 1fr)",
+          }}
+          gap={6}
+          w={"100%"}
+        >
+          {data.map((item, idx) => (
             <CourseCard item={item} key={idx} />
-          </Grid>
-        ))}
+          ))}
+        </Grid>
       </>
       <Box mt={4}>
         <Header text={"Bloglar"} />
