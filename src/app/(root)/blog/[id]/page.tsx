@@ -4,14 +4,7 @@ import { calculateTimeEstimated } from "@/helpers/calculate_time";
 import { IBlogs } from "@/Interfaces/blog";
 import { db } from "@/lib/firebase/firebase";
 import { Box, HStack, Text } from "@chakra-ui/react";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 interface IGetBlog {
   data: IBlogs;
@@ -40,7 +33,7 @@ export default async function BlogPage({
 }) {
   const ids = (await params).id;
   const { data } = await getBlog(ids);
-  let split = data.description.split("\n\n");
+  const split = data.description.split("\n\n");
 
   return (
     <Box p={2}>

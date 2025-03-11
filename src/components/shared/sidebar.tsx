@@ -1,5 +1,5 @@
 "use client";
-import { Box, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Icons from "../Icons/Icons";
 import { useRouter } from "nextjs-toploader/app";
 import { usePathname } from "next/navigation";

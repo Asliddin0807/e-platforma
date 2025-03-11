@@ -46,7 +46,6 @@ export default async function Home() {
           }}
           gap={6}
           w={"100%"}
-          
         >
           {blog_data.map((item, key) => (
             <Box
@@ -64,14 +63,14 @@ export default async function Home() {
                 <Text fontSize={"20px"}>{item.title}</Text>
                 <Text color={"grey"}>{item.description.slice(0, 70)}...</Text>
                 <Link href={`/blog/${item.id}`}>
-                  <Button mt={5}>Ko'proq</Button>
+                  <Button mt={5}>{"Ko'proq"}</Button>
                 </Link>
               </Box>
             </Box>
           ))}
         </Grid>
       </Box>
-          
+
       {user?.id && <MyCourses />}
     </Container>
   );

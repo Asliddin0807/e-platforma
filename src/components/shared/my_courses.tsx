@@ -3,7 +3,7 @@ import { IAuth } from "@/Interfaces/auth";
 import { CheckUser } from "@/Services/checkUser";
 import { Box, Flex, HStack, Progress, Text } from "@chakra-ui/react";
 import { useAuth } from "@clerk/nextjs";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CustomImage from "./Image";
 import StarRating from "../Icons/Stars";
 import { calculatePercentage } from "@/helpers/calculate_persentage";

@@ -2,7 +2,7 @@ import Header from "@/components/shared/HeaderText";
 import UserTable from "@/components/shared/user-table";
 import { IAuth } from "@/Interfaces/auth";
 import { db } from "@/lib/firebase/firebase";
-import { Box, Button, Stack, Table, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { collection, getDocs } from "firebase/firestore";
 
 interface IGetUsers {

@@ -57,7 +57,7 @@ export default function ProjectDetail() {
           Loyhalar boshqaruvi
         </Text>
         <Button onClick={() => setShow((prev) => (prev = !prev))}>
-          Loyha qo'shish
+          {"Loyha qo'shish"}
         </Button>
       </Flex>
       {show && (

@@ -82,7 +82,7 @@ const ProjectComponent = ({ isAdmin }: Props) => {
                     onClick={() => deleteHandler(item?.id)}
                   >
                     <Icons iconName={"BiTrash"} size={20} />
-                    O'chirish
+                    {"O'chirish"}
                   </MenuItem>
                 </MenuContent>
               </MenuRoot>

@@ -3,7 +3,7 @@ import DashboardChart from "@/components/shared/Bar";
 import { admin_data } from "@/constants/admin_data";
 import Icons from "@/components/Icons/Icons";
 import CourseCard from "@/components/shared/CourseCard";
-import Link from "next/link";
+
 import CourseService from "@/Services/courses";
 
 export default async function Dashboard() {

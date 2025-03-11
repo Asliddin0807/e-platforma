@@ -37,7 +37,7 @@ const Page = () => {
 
   useEffect(() => {
     getCourse();
-  }, []);
+  }, [userId]);
 
   const id_video = course?.video_course.find((c) => c.id === id) || null;
   const router = useRouter();
@@ -155,7 +155,7 @@ const Page = () => {
         </Box>
       </Box>
       <Box w="full" mt={20} mb={20}>
-        <Text fontSize={"22px"}>Amaliyotda o'zingizni sinab ko'ring!</Text>
+        <Text fontSize={"22px"}>{"Amaliyotda o'zingizni sinab ko'ring!"}</Text>
         <Editors />
       </Box>
     </Box>

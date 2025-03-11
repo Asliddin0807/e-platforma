@@ -13,7 +13,6 @@ export const HeroComponent = () => {
   const gapSize = useBreakpointValue({ base: 4, md: 8, lg: 12 }); // Отступы
   const width = useBreakpointValue({ base: "100%", md: "800px", lg: "1000px" });
 
-
   return (
     <Box
       display={"flex"}
@@ -50,8 +49,9 @@ export const HeroComponent = () => {
             fontWeight={"400"}
             textAlign={"start"}
           >
-            Amaliy dasturlash kurslari bilan to'la platformaga xush kelibsiz. Bu
-            erda siz barcha pullik kurslarni bepul o'rganishingiz mumkin.
+            {
+              "Amaliy dasturlash kurslari bilan to'la platformaga xush kelibsiz. Bu erda siz barcha pullik kurslarni bepul o'rganishingiz mumkin."
+            }
           </Text>
         </Box>
         <Box>

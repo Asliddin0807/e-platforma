@@ -1,7 +1,7 @@
 import Header from "@/components/shared/HeaderText";
 import ProjectComponent from "@/components/shared/project-items";
 
-import { Box, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 export default async function Projects() {
   return (

@@ -62,14 +62,16 @@ export default function CourseItems({ courses, setCourses }: Props) {
             placeholder="https://vimeo.com/8847677"
             big={false}
             value={course.link}
-            change={(e: React.ChangeEvent<HTMLInputElement>) => updateCourse(course.id, "link", e.target.value)}
+            change={(e: React.ChangeEvent<HTMLInputElement>) =>
+              updateCourse(course.id, "link", e.target.value)
+            }
             name={"name"}
           />
         </Box>
       ))}
 
       <Button onClick={addCourse} colorScheme="blue" mt={2}>
-        Darslik qo'shish
+        {"Darslik qo'shish"}
       </Button>
     </Box>
   );

@@ -13,7 +13,6 @@ import {
   Grid,
   HStack,
   Text,
-  Table,
 } from "@chakra-ui/react";
 import CourseService from "@/Services/courses";
 import TableCourseItems from "@/components/shared/table-course";
@@ -41,64 +40,6 @@ export default async function Course({
   const { data } = (await CourseService.getCourse(ids)) ?? defaultCourse;
   const parts: string[] | undefined = data?.description.split("🔹");
   const list: string[] | undefined = data?.for_whom.split("•");
-
-  const detail = [
-    {
-      id: 1,
-      name: "Darslar soni",
-      value: data.video_course.length,
-      icon: {
-        name: "BiHash",
-        color: "gray",
-      },
-    },
-    {
-      id: 2,
-      name: "Narxi",
-      value: "bepul",
-      icon: {
-        name: "BiCreditCardAlt",
-        color: "yellow",
-      },
-    },
-    {
-      id: 3,
-      name: "Faoydalanish chegarasi",
-      value: "cheksiz",
-      icon: {
-        name: "BiCheckCircle",
-        color: "green",
-      },
-    },
-
-    {
-      id: 5,
-      name: "Baxosi",
-      value: data.rate.rates,
-      icon: {
-        name: "BiSolidStar",
-        color: "yellow",
-      },
-    },
-    {
-      id: 6,
-      name: "Ko'rilgan",
-      value: data.rate.viewers,
-      icon: {
-        name: "BiHide",
-        color: "gray",
-      },
-    },
-    {
-      id: 4,
-      name: "Sertifikat",
-      value: "mavjud",
-      icon: {
-        name: "BiAward",
-        color: "purple",
-      },
-    },
-  ];
 
   return (
     <Box
@@ -187,7 +128,7 @@ export default async function Course({
             placeItems={"center"}
           >
             <Text textAlign={"start"} fontSize={"20px"} fontWeight={"bold"}>
-              Nimalarni o'rganasiz:
+              {"Nimalarni o'rganasiz:"}
             </Text>
             {data?.project.map((item, idx) => (
               <GridItem

@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Button, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import { FiEye } from "react-icons/fi";
+
 import StarRating from "../Icons/Stars";
 import { IProducts } from "@/Interfaces/Product";
 import { useRouter } from "nextjs-toploader/app";
@@ -45,11 +45,9 @@ export default function DetailButton({ course }: Props) {
     } else {
       setLoading(false);
       toaster.error({
-        title: 'Iltimos profilga kiring!',
-      })
+        title: "Iltimos profilga kiring!",
+      });
     }
-
-    console.log("appp");
   };
 
   return (
@@ -89,6 +87,7 @@ export default function DetailButton({ course }: Props) {
           </Text>
           <StarRating rating={course.rate.rates} size={isMobile ? 18 : 25} />
         </Flex>
+        <Text textAlign={'start'} mt={2} color={'grey'}>{"Kursga kirish bepul!"}</Text>
       </Box>
       <Button
         w={{ base: "", md: "", xl: "" }}

@@ -13,7 +13,7 @@ interface Props {
   height?: string;
 }
 
-const CustomImage: FC<Props> = ({ product, fill, width, height }) => {
+const CustomImage: FC<Props> = ({ product, fill, width = "100%", height }) => {
   const [isLoading, setIsloading] = useState(true);
   return (
     <>
@@ -24,11 +24,10 @@ const CustomImage: FC<Props> = ({ product, fill, width, height }) => {
           onLoad={() => setIsloading(false)}
           width={400}
           height={1000}
-          
           style={{
-            width: '100%',
+            width: width,
             height: height,
-            objectFit: 'cover',
+            objectFit: "cover",
             borderRadius: "20px",
           }}
         />

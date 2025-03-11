@@ -1,6 +1,7 @@
 "use client";
 import { CourseBread } from "@/components/shared/Breads";
 import CourseItems from "@/components/shared/course_item";
+import Header from "@/components/shared/HeaderText";
 import InputField from "@/components/shared/InputField";
 import Menu from "@/components/shared/menu";
 import {
@@ -118,9 +119,7 @@ export default function AddCourse() {
       }}
     >
       <Box w={{ base: "100%", md: "100%", xl: "50%" }} p={2}>
-        <Text fontSize={"30px"} fontWeight={"bold"} mt={5}>
-          Kurs qo'shish
-        </Text>
+        <Header text={"Kurs qo'shish"} />
         <CourseBread
           title_one={"Dashboard"}
           title_two={"Kurs qo'shish"}

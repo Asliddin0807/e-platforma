@@ -82,7 +82,7 @@ export const DeleteCard: FC<Props> = ({ data }) => {
                   onClick={() => deleteHandler(item?.id)}
                 >
                   <Icons iconName={"BiTrash"} size={20} />
-                  O'chirish
+                  {"O'chirish"}
                 </MenuItem>
               </MenuContent>
             </MenuRoot>

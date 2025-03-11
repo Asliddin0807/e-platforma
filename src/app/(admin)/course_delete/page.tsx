@@ -2,6 +2,7 @@
 import Icons from "@/components/Icons/Icons";
 import StarRating from "@/components/Icons/Stars";
 import Empty from "@/components/shared/Empty";
+import Header from "@/components/shared/HeaderText";
 import CustomImage from "@/components/shared/Image";
 import { toaster } from "@/components/ui/toaster";
 import { IProducts } from "@/Interfaces/Product";
@@ -47,9 +48,8 @@ export default function DeleteCoursePage() {
       justifyContent={"center"}
       flexDirection={"column"}
     >
-      <Text fontSize={"30px"} ml={2} fontWeight={"bold"} mt={5}>
-        Kurs o'chirish
-      </Text>
+      <Header text={"Kurs o'chirish"} />
+
       <Empty
         title={"Qo'shilgan kurslar mavjud emas!"}
         desc={"Kurs qo'shish uchun havolani ustiga bosing!"}
@@ -58,9 +58,7 @@ export default function DeleteCoursePage() {
     </Box>
   ) : (
     <Box w={"full"}>
-      <Text fontSize={"30px"} ml={2} fontWeight={"bold"} mt={5}>
-        Kurs o'chirish
-      </Text>
+      <Header text={"Kurs o'chirish"} />
       <Box
         display={"flex"}
         mx={{ base: "auto", md: "none", xl: "none" }}
