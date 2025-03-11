@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     template: "%s | Xammasi IT xaqida",
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/image.png",
+    apple: "/image.png",
   },
   keywords: ["IT Code", "Programming languages", "JavaScript", "coding"],
   openGraph: {
