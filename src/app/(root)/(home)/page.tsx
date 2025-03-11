@@ -5,10 +5,12 @@ import CustomImage from "@/components/shared/Image";
 import MyCourses from "@/components/shared/my_courses";
 import { IBlogs } from "@/Interfaces/blog";
 import { db } from "@/lib/firebase/firebase";
+import { CheckUser } from "@/Services/checkUser";
 import CourseService from "@/Services/courses";
 
 import { Box, Button, Container, Grid, Text } from "@chakra-ui/react";
-import { currentUser } from "@clerk/nextjs/server";
+import { currentUser, User } from "@clerk/nextjs/server";
+import { UserResource } from "@clerk/types";
 import { collection, getDocs } from "firebase/firestore";
 import Link from "next/link";
 
@@ -23,9 +25,11 @@ const getBlogs = async () => {
 };
 
 export default async function Home() {
-  const user = await currentUser();
+  const user: User | null = await currentUser();
   const { data } = await CourseService.getCourses();
   const { blog_data } = await getBlogs();
+
+  const response = await CheckUser.user(user);
 
   return (
     <Container display={"flex"} flexDirection={"column"} mt={4}>

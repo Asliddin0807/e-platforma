@@ -44,6 +44,7 @@ const MyCourses = () => {
           borderRadius={"xl"}
           gap={5}
           p={2}
+          mt={2}
           alignItems={"center"}
           onClick={() => router.push(`/course/${item.course.slug}`)}
           cursor={"pointer"}

@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 import { UserResource } from "@clerk/types";
 import { IProducts } from "@/Interfaces/Product";
+import { User } from "@clerk/nextjs/server";
 
 interface IGetUser {
   data: IAuth;
@@ -26,7 +27,7 @@ interface IGetMyCourse {
 }
 
 export const CheckUser = {
-  async user(user: UserResource | null): Promise<IAuth | null> {
+  async user(user: User | null): Promise<IAuth | null> {
     if (!user) return null;
 
     const userRef = doc(db, "users", user.id);
