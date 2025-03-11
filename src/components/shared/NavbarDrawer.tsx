@@ -21,7 +21,7 @@ import { CheckUser } from "@/Services/checkUser";
 export default function NavbarDrawer() {
   const [dashboard, setDashboard] = useState<boolean>(false);
   const { userId } = useAuth();
-  const { onOpen, onClose } = useDisclosure();
+  const { onClose } = useDisclosure();
 
   const checkUser = async () => {
     const { data } = await CheckUser.getUser(userId);
@@ -33,7 +33,6 @@ export default function NavbarDrawer() {
   useEffect(() => {
     checkUser();
   }, [userId]);
-
 
   return (
     <Box>
@@ -53,7 +52,7 @@ export default function NavbarDrawer() {
               <Link href={item.pathname} key={idx}>
                 <Button
                   mt={2}
-                  onClick={closeDrawer}
+                  onClick={onClose}
                   w={"100%"}
                   size={"xs"}
                   variant={"subtle"}
