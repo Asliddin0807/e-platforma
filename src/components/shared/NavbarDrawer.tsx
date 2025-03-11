@@ -21,7 +21,7 @@ import { CheckUser } from "@/Services/checkUser";
 export default function NavbarDrawer() {
   const [dashboard, setDashboard] = useState<boolean>(false);
   const { userId } = useAuth();
-  const { onClose } = useDisclosure();
+  const { onOpen, onClose } = useDisclosure();
 
   const checkUser = async () => {
     const { data } = await CheckUser.getUser(userId);
@@ -34,11 +34,12 @@ export default function NavbarDrawer() {
     checkUser();
   }, [userId]);
 
+
   return (
     <Box>
       <DrawerRoot placement={"start"}>
         <DrawerBackdrop />
-        <DrawerTrigger asChild>
+        <DrawerTrigger>
           <Button variant="outline" size="sm">
             <Icons iconName={"BiMenu"} />
           </Button>
@@ -52,7 +53,7 @@ export default function NavbarDrawer() {
               <Link href={item.pathname} key={idx}>
                 <Button
                   mt={2}
-                  onClick={() => onClose()}
+                  onClick={closeDrawer}
                   w={"100%"}
                   size={"xs"}
                   variant={"subtle"}
