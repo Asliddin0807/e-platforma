@@ -34,7 +34,7 @@ export const CodeBlocks = ({ codeblock, codeColor, style }: Props) => {
         py={3}
         textStyle="sm"
         position="relative"
-        w={{ base: "350px", md: "400px", xl: "400px" }}
+        w={{ base: "370px", md: "400px", xl: "400px" }}
         // lg={{ w: "470px" }}
         pr={10}
         pl={10}

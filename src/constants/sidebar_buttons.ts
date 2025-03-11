@@ -60,7 +60,7 @@ export const adminNavButtons = [
     id: 10,
     name: "Blog qo'shish",
     pathname: "/blog",
-    icon: "BiCodeAlt",
+    icon: "BiHash",
   },
   {
     id: 4,
@@ -72,6 +72,12 @@ export const adminNavButtons = [
     id: 5,
     name: "Loyhalar",
     pathname: "dashboard_projects",
+    icon: "BiHash",
+  },
+  {
+    id: 102,
+    name: "Go to back",
+    pathname: "/",
     icon: "BiHash",
   },
 ];
