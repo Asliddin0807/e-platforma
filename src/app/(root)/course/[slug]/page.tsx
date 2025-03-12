@@ -13,6 +13,7 @@ import {
   Grid,
   HStack,
   Text,
+  List,
 } from "@chakra-ui/react";
 import CourseService from "@/Services/courses";
 import TableCourseItems from "@/components/shared/table-course";
@@ -39,7 +40,10 @@ export default async function Course({
 
   const { data } = (await CourseService.getCourse(ids)) ?? defaultCourse;
   const parts: string[] | undefined = data?.description.split("🔹");
-  const list: string[] | undefined = data?.for_whom.split("•");
+  const list: string[] | undefined = data?.for_whom
+    ?.split(".") // Nuqta va yangi qatordan bo‘lib olish
+    .map((item) => item.trim()) // Keraksiz bo‘sh joylarni olib tashlash
+    .filter((item) => item !== ""); // Bo‘sh qatorlarni chiqarib tashlash
 
   return (
     <Box
@@ -175,9 +179,11 @@ export default async function Course({
               Kim uchun?
             </Text>
             {list?.map((item, index) => (
-              <Text key={index}>
-                {index === 0 ? item.trim() : `• ${item.trim()}`}
-              </Text>
+              <List.Root key={index}>
+                <List.Item ml={"15px"}>
+                  {index === 0 ? item.trim() : `${item.trim()}.`}
+                </List.Item>
+              </List.Root>
             ))}
           </Box>
         </Box>
