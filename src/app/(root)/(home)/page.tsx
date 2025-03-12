@@ -1,3 +1,4 @@
+import { CodeBlocks } from "@/components/shared/Animation_Text";
 import CourseCard from "@/components/shared/CourseCard";
 import Header from "@/components/shared/HeaderText";
 import { HeroComponent } from "@/components/shared/Hero";
@@ -8,7 +9,7 @@ import { db } from "@/lib/firebase/firebase";
 import { CheckUser } from "@/Services/checkUser";
 import CourseService from "@/Services/courses";
 
-import { Box, Button, Container, Grid, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Grid, Text } from "@chakra-ui/react";
 import { currentUser, User } from "@clerk/nextjs/server";
 import { UserResource } from "@clerk/types";
 import { collection, getDocs } from "firebase/firestore";
@@ -45,7 +46,7 @@ export default async function Home() {
           gap={6}
           w={"100%"}
         >
-          {data.map((item, idx) => (
+          {data.reverse().map((item, idx) => (
             <CourseCard item={item} key={idx} />
           ))}
         </Grid>

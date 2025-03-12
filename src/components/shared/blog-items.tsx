@@ -1,7 +1,7 @@
 "use client";
 import { IBlogs } from "@/Interfaces/blog";
 import { Box, Button, Grid, HStack, Text } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, useState } from "react";
 import CustomImage from "./Image";
 import { MenuContent, MenuItem, MenuRoot, MenuTrigger } from "../ui/menu";
 import Icons from "../Icons/Icons";
@@ -37,13 +37,14 @@ const deleteBlog = async (id: string) => {
 };
 
 export const DeleteCard: FC<Props> = ({ data }) => {
+  const [deleteBlogState, setDeleteBlog] = useState<IBlogs[]>(data);
   const deleteHandler = async (id: string) => {
     const { message } = await deleteBlog(id);
+    const newDelete = deleteBlogState.filter((c) => c.id != id);
+    setDeleteBlog(newDelete);
     toaster.success({
       title: message,
     });
-
-    window.location.reload();
   };
 
   return (
@@ -56,7 +57,7 @@ export const DeleteCard: FC<Props> = ({ data }) => {
       gap={2}
     >
       <Toaster />
-      {data.map((item, idx) => (
+      {deleteBlogState.map((item, idx) => (
         <Box
           key={idx}
           w={"100%"}

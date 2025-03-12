@@ -10,10 +10,9 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Box, Button, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, useDisclosure, Link } from "@chakra-ui/react";
 import Icons from "../Icons/Icons";
-import Link from "next/link";
-import { navButtons } from "@/constants/sidebar_buttons";
+// import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { CheckUser } from "@/Services/checkUser";
@@ -54,16 +53,16 @@ export default function NavbarDrawer({ data }: Props) {
           </DrawerHeader>
           <DrawerBody>
             {data.map((item, idx) => (
-              <Link href={item.pathname} key={idx}>
-                <Button
-                  mt={2}
-                  onClick={onClose}
-                  w={"100%"}
-                  size={"xs"}
-                  variant={"subtle"}
-                >
-                  {item.name}
-                </Button>
+              <Link
+                href={item.pathname}
+                key={idx}
+                w={"full"}
+                p={4}
+                _hover={{ bg: "cyan.400" }}
+                fontSize={"20px"}
+                bg={"cyan.500"}
+              >
+                {item.name}
               </Link>
             ))}
             {dashboard && (

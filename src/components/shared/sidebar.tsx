@@ -18,14 +18,7 @@ export default function Sidebar({ data }: iGetSide) {
   };
 
   return (
-    <Box
-      w={"full"}
-      mt={-2}
-      h={"full"}
-      minH={"100vh"}
-      bg={"gray.900"}
-      _light={{ bg: "gray.300" }}
-    >
+    <Box w={"full"} h={"full"}>
       <Box mt={20} p={5} position={"fixed"} w={"20%"} top={8}>
         {data.map((item, idx) => (
           <Box

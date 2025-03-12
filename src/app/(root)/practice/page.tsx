@@ -38,3 +38,7 @@ export default function QuizPage() {
 {
   /* <QuizComponent /> */
 }
+
+
+// 4zOmabfy1Z25aYeMvttDeKXVBQLaXF5OVw1JWbRQ 
+// token for quiz api

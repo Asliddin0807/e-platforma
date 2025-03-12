@@ -58,23 +58,6 @@ export const HeroComponent = () => {
           <VerticalCarousel dataCarousel={dataCarousel} />
         </Box>
       </Grid>
-      <Flex
-        alignItems={"start"}
-        justifyContent={"start"}
-        flexDirection={{ base: "column", md: "column", xl: "row" }}
-      >
-        <CodeBlocks
-          style="row"
-          codeColor="yellow.500"
-          codeblock={`<<!DOCTYPE html>\n<html>\n<head><title>Example</title>\n</head>\n<body>\n<h1><ahref="/">Header</a>\n</h1>\n<nav><ahref="one/">One</a><ahref="two/">Two</a><ahref="three/">Three</a>\n</nav>`}
-        />
-        <CodeBlocks
-          style="row-reverse"
-          codeColor="purple.500"
-          codeblock={`import React from 'react';\nimport { Box, Text } from '@chakra ui/react';\n\nexport default function App(){\t\nreturn (\n<Box>\n<Text>Hello World</Text>\n</Box>\n)};`}
-        />
-      </Flex>
-
       <Box w={{ base: "100%", md: "100%" }} mt={10}>
         <Marquee
           gradient={false}
