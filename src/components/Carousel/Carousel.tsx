@@ -2,7 +2,7 @@ import "./Vertical.css";
 import React, { FC } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text,  } from "@chakra-ui/react";
 import Icons from "@/components/Icons/Icons";
 import Link from "next/link";
 
@@ -31,11 +31,12 @@ const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
               <div className="embla__slide__numberv">
                 <Link href={"/courses"}>
                   <Box
-                    w={"100%"}
+                    w={{base: "400px", md: '100%'}}
                     borderRadius={3}
                     key={index}
                     minH={"100%"}
                     p={2}
+                    mx={'20px'}
                     fontSize={"23px"}
                     transition={"all 0.3s ease"}
                     cursor={"pointer"}
@@ -43,6 +44,7 @@ const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
                     _light={{ bg: "gray.400" }}
                     boxShadow={"md"}
                     className="container__info"
+                    border={'1px solid white'}
                   >
                     <HStack display={"flex"} gap={"-2px"} alignItems={"center"}>
                       <Text textAlign={"start"}>{item.name}</Text>

@@ -57,16 +57,13 @@ export default function NavbarDrawer({ data }: Props) {
                 href={item.pathname}
                 key={idx}
                 w={"full"}
-                p={4}
-                _hover={{ bg: "cyan.400" }}
-                fontSize={"20px"}
-                bg={"cyan.500"}
+                mt={2}
               >
-                {item.name}
+                <Button w={'full'} size={'xs'} variant={'subtle'}>{item.name}</Button>
               </Link>
             ))}
             {dashboard && (
-              <Link href={"/dashboard"}>
+              <Link href={"/dashboard"} w={"full"}>
                 <Button w={"100%"} onClick={onClose} mt={2} size={"xs"}>
                   Admin
                 </Button>

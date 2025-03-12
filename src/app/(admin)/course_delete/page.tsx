@@ -57,7 +57,7 @@ export default function DeleteCoursePage() {
       />
     </Box>
   ) : (
-    <Box w={"full"}>
+    <Box w={"full"} p={2}>
       <Header text={"Kurs o'chirish"} />
       <Box
         display={"flex"}
@@ -76,6 +76,7 @@ export default function DeleteCoursePage() {
             alignItems={"center"}
             mr={"10px"}
             p={2}
+            mt={2}
             bg={"gray.100"}
             _dark={{ bg: "gray.800" }}
             boxShadow={"xl"}

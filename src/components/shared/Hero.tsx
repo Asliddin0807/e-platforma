@@ -54,7 +54,7 @@ export const HeroComponent = () => {
             }
           </Text>
         </Box>
-        <Box>
+        <Box w={"100%"}>
           <VerticalCarousel dataCarousel={dataCarousel} />
         </Box>
       </Grid>
