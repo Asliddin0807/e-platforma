@@ -57,7 +57,14 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <ClerkProvider localization={localization}>
+      <ClerkProvider
+        localization={localization}
+        appearance={{
+          layout: {
+            unsafe_disableDevelopmentModeWarnings: true,
+          },
+        }}
+      >
         <body>
           <Provider>
             <NextTopLoader

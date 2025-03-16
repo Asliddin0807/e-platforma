@@ -31,12 +31,11 @@ const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
               <div className="embla__slide__numberv">
                 <Link href={"/courses"}>
                   <Box
-                    w={{base: "400px", md: '100%'}}
+                    w={{base: "400px", md: '130%'}}
                     borderRadius={3}
                     key={index}
                     minH={"100%"}
                     p={2}
-                    mx={'20px'}
                     fontSize={"23px"}
                     transition={"all 0.3s ease"}
                     cursor={"pointer"}

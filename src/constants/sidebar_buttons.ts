@@ -29,6 +29,12 @@ export const navButtons = [
     pathname: "/practice",
     icon: "BiTestTube",
   },
+  {
+    id: 111,
+    name: 'FAQ',
+    pathname: '/faq',
+    icon: 'BiQuestionMark'
+  }
 ];
 
 export const adminNavButtons = [

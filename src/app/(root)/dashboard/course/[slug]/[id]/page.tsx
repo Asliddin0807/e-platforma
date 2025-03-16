@@ -29,6 +29,7 @@ const Page = () => {
   const { id, slug } = params;
   const [course, setCourse] = useState<IProducts | undefined>(undefined);
   const { userId } = useAuth();
+  const [isShow, setShow] = useState<boolean>(true);
 
   const getCourse = async () => {
     const { data } = await CheckUser.getMyCourseItem(userId, slug);
@@ -156,7 +157,11 @@ const Page = () => {
       </Box>
       <Box w="full" mt={20} mb={20}>
         <Text fontSize={"22px"}>{"Amaliyotda o'zingizni sinab ko'ring!"}</Text>
-        <Editors />
+        <Button mt={2} onClick={() => setShow((prev) => (prev = !prev))}>
+          <Icons iconName={"BiCodeBlock"} />
+          Compilyator
+        </Button>
+        {!isShow && <Editors />}
       </Box>
     </Box>
   );
