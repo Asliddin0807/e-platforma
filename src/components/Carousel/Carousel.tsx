@@ -1,11 +1,13 @@
-import "./Vertical.css";
 import React, { FC } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { Box, HStack, Text,  } from "@chakra-ui/react";
-import Icons from "@/components/Icons/Icons";
-import Link from "next/link";
-
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import './Vertical.css'
 interface Props {
   id: number;
   name: string;
@@ -13,55 +15,30 @@ interface Props {
 }
 
 const VerticalCarousel: FC<{ dataCarousel: Props[] }> = ({ dataCarousel }) => {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      axis: "y",
-      align: "start",
-      skipSnaps: false,
-      loop: false,
-    },
-    [Autoplay()]
-  );
   return (
-    <section className="emblav">
-      <div className="embla__viewportv" ref={emblaRef}>
-        <div className="embla__containerv">
-          {dataCarousel.map((item, index) => (
-            <div className="embla__slidev" key={index}>
-              <div className="embla__slide__numberv">
-                <Link href={"/courses"}>
-                  <Box
-                    w={{base: "400px", md: '130%'}}
-                    borderRadius={3}
-                    key={index}
-                    minH={"100%"}
-                    p={2}
-                    fontSize={"23px"}
-                    transition={"all 0.3s ease"}
-                    cursor={"pointer"}
-                    bg={"gray.800"}
-                    _light={{ bg: "gray.400" }}
-                    boxShadow={"md"}
-                    className="container__info"
-                    border={'1px solid white'}
-                  >
-                    <HStack display={"flex"} gap={"-2px"} alignItems={"center"}>
-                      <Text textAlign={"start"}>{item.name}</Text>
-                      <Box className="icon">
-                        <Icons iconName={"BiChevronRight"} />
-                      </Box>
-                    </HStack>
-                    <Text textAlign={"start"} fontSize={"13px"}>
-                      {item.text}
-                    </Text>
-                  </Box>
-                </Link>
-              </div>
+    <Carousel
+      opts={{
+        align: "start",
+      }}
+      orientation="vertical"
+      className="w-full"
+    >
+      <CarouselContent className="-mt-1 h-[300px] w-full border-2">
+        {dataCarousel.map((item, index) => (
+          <CarouselItem key={index} className="basis-1/2">
+            <div className="p-1">
+              <Card className="w-full p-4 card">
+                <CardContent className="h-[150px] flex items-center mt-10 justify-center p-6">
+                  <span className="text-3xl font-semibold">{item.text}</span>
+                </CardContent>
+              </Card>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   );
 };
 

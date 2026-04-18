@@ -2,6 +2,7 @@ import Navbar from "@/components/shared/Navbar";
 import Sidebar from "@/components/shared/sidebar";
 import { navButtons } from "@/constants/sidebar_buttons";
 import { Box } from "@chakra-ui/react";
+import "../globals.css"
 
 export default function RootLayout({
   children,
@@ -10,8 +11,8 @@ export default function RootLayout({
 }>) {
   return (
     <Box>
-        <Navbar data={navButtons} />
-      
+      <Navbar data={navButtons} />
+
       <Box display={"flex"} h={"full"} w={"100%"}>
         <Box
           w={"20%"}
