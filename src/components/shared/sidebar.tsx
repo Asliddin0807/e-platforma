@@ -18,8 +18,8 @@ export default function Sidebar({ data }: iGetSide) {
   };
 
   return (
-    <Box w={"full"} h={"full"}>
-      <Box mt={20} p={5} position={"fixed"} w={"20%"} top={8}>
+    <Box w={"20%"} top={0} position={'fixed'} h={"full"} bg={'gray.800'}>
+      <Box mt={20} p={5} position={"fixed"} w={"20%"} top={0}>
         {data.map((item, idx) => (
           <Box
             key={idx}

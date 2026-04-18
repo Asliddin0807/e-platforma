@@ -3,6 +3,10 @@ import { Provider } from "@/components/ui/provider";
 // import Navbar from "@/components/shared/Navbar";
 import NextTopLoader from "nextjs-toploader";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   description: "Online kurslar markazi!",
@@ -47,7 +51,7 @@ export default function RootLayout({
     socialButtonsBlockButton: "{{provider|titleize}} orqali kirish",
   };
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link

@@ -55,10 +55,16 @@ export const HeroComponent = () => {
           </Text>
         </Box>
         <Box w={"100%"}>
-          <VerticalCarousel dataCarousel={dataCarousel} />
+          {/* <VerticalCarousel dataCarousel={dataCarousel} /> */}
         </Box>
       </Grid>
-      <Box w={{ base: "100%", md: "100%" }} mt={10}>
+      <Box
+        w={{ base: "100%", md: "100%" }}
+        mt={10}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
         <Marquee
           gradient={false}
           speed={30}

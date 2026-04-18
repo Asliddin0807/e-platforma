@@ -47,20 +47,28 @@ export default function Navbar({ data }: Props) {
   if (!mounted) return null; // Избегаем рендера на сервере
 
   return (
-    <Box w={"full"} p={1} h={"90px"} position={"sticky"} top={0} zIndex={10}>
+    <Box
+      w={"full"}
+      padding={10}
+      h={"90px"}
+      position={"sticky"}
+      top={0}
+      zIndex={10}
+    >
       <Box
         position={"absolute"}
-        top={0}
-        left={0}
-        right={0}
+        top={3}
+        right={{ base: 0, md: 1, xl: 2 }}
         p={4}
         zIndex={1000}
         style={{ backdropFilter: "blur(10px) brightness(100%)" }}
         fontSize={"22px"}
         fontWeight={"bold"}
-        bg={"gray.900"}
-        _light={{ bg: "gray.300" }}
-        borderBottom={"1px solid gray"}
+        borderRadius={20}
+        _light={{ bg: "gray.200/2" }}  
+        width={{ base: "full", md: "full", xl: "79%" }}
+        backdropFilter="blur(10px)"
+        bg={"rgba(255, 255, 255, 0.2)"}
       >
         <HStack alignItems={"center"} justifyContent={"space-between"}>
           <Box display={"flex"} gap={2} alignItems={"center"}>
